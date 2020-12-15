@@ -1,3 +1,12 @@
 {
-  "error": "Ошибка"
+  "networkConnection": "Нет подключения к интернету",
+  "emptyList": "Здесь пока ничего нет",
+  "watchBooksList": "Перейти к просмотру книг",
+  "settings": "Настройки",
+  "myBooks": "Мои книги",
+  "library": "Библиотека",
+  "signinout": "Вход / Выход",
+  "languages": "Языки",
+  "darkMode": "Темная тема",
+  "textSize": "Размер текста"
 }

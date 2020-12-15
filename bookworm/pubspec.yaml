@@ -31,6 +31,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icons/
-    - assets/fonts/
+    - assets/images/
 flutter_intl:
   enabled: true

@@ -1,1 +1,12 @@
-{}
+{
+    "networkConnection": "Network connection has been lost",
+    "emptyList": "There is no anything yet",
+    "watchBooksList": "Go to the book list",
+    "settings": "Settings",
+    "myBooks": "My Books",
+    "library": "Library",
+    "signinout": "Sign In / Sign Out",
+    "languages": "Languages",
+    "darkMode": "Dark mode",
+    "textSize": "Text size"
+}

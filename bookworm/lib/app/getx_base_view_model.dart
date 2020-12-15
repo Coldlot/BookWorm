@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:bookworm/generated/l10n.dart';
 
 class GetxBaseViewModel extends GetxController {
   String errorMessage;
@@ -14,7 +13,7 @@ class GetxBaseViewModel extends GetxController {
       setBusy(true);
       errorMessage = null;
       await body();
-      // ignore: avoid_catches_without_on_clauses
+    // ignore: empty_catches, avoid_catches_without_on_clauses
     } catch (e) {
     } finally {
       setBusy(false);

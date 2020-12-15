@@ -21,6 +21,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-
+    "darkMode" : MessageLookupByLibrary.simpleMessage("Dark mode"),
+    "emptyList" : MessageLookupByLibrary.simpleMessage("There is no anything yet"),
+    "languages" : MessageLookupByLibrary.simpleMessage("Languages"),
+    "library" : MessageLookupByLibrary.simpleMessage("Library"),
+    "myBooks" : MessageLookupByLibrary.simpleMessage("My Books"),
+    "networkConnection" : MessageLookupByLibrary.simpleMessage("Network connection has been lost"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
+    "signinout" : MessageLookupByLibrary.simpleMessage("Sign In / Sign Out"),
+    "textSize" : MessageLookupByLibrary.simpleMessage("Text size"),
+    "watchBooksList" : MessageLookupByLibrary.simpleMessage("Go to the book list")
   };
 }
