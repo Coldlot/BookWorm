@@ -27,4 +27,6 @@ class BWStyle {
       create(fontSize: 15, color: BWColors.black, laterSpacing: 1.25);
   static TextStyle buttonTextStyle =
       create(fontSize: 12, color: BWColors.black, laterSpacing: 1.25);
+  static TextStyle large =
+      create(fontSize: 32, color: BWColors.black, laterSpacing: 1.25);
 }

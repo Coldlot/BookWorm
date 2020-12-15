@@ -1,6 +1,8 @@
 import 'package:bookworm/res/res.dart';
+import 'package:bookworm/services/theme_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class ItemRow extends StatelessWidget {
   final Widget trailing;
@@ -9,13 +11,12 @@ class ItemRow extends StatelessWidget {
   final Function onTap;
   final Color color;
 
-  const ItemRow({
+  final themeService = Get.find<BWThemeService>();
+
+  ItemRow({
     @required this.icon,
     @required this.text,
-    this.trailing = const Icon(
-      Icons.arrow_forward_ios,
-      size: 20,
-    ),
+    this.trailing,
     this.color,
     this.onTap,
   });
@@ -29,7 +30,7 @@ class ItemRow extends StatelessWidget {
           SvgPicture.asset(icon,
               width: 30, height: 30, color: color ?? BWColors.darkGray),
           const SizedBox(width: 15),
-          Text(text, style: BWStyle.headerStyle),
+          Text(text, style: themeService.headerStyleThemed),
           const Spacer(),
           trailing,
         ],

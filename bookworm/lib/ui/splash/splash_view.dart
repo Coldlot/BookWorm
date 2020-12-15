@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
-import '../../res/res.dart';
-
 class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,12 +11,13 @@ class SplashView extends StatelessWidget {
       builder: (model) {
         model.startTimer();
         return Scaffold(
-          backgroundColor: BWColors.beige,
+          backgroundColor: model.themeService.beigeThemed,
           body: Center(
             child: SvgPicture.asset(
               "assets/icons/book_logo.svg",
               width: 300,
               height: 300,
+              color: model.themeService.blackThemed,
             ),
           ),
         );

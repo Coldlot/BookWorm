@@ -1,8 +1,9 @@
+import 'package:bookworm/services/theme_service.dart';
 import 'package:bookworm/ui/tabs/settings/settings_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
-import '../../res/res.dart';
 import 'books/books_view.dart';
 import 'favorites/favorites_view.dart';
 
@@ -10,23 +11,60 @@ final GlobalKey<NavigatorState> firstTabNavKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> secondTabNavKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> thirdTabNavKey = GlobalKey<NavigatorState>();
 
-class BWTabBar extends StatelessWidget {
+class BWTabBar extends StatefulWidget {
+  static BWTabBarState state;
+  @override
+  State<StatefulWidget> createState() {
+    // ignore: join_return_with_assignment
+    state = BWTabBarState();
+    return state;
+  }
+}
+
+class BWTabBarState extends State<BWTabBar> {
+  final themeService = Get.find<BWThemeService>();
+
+  void update() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/icons/books.svg'),
-              activeIcon: SvgPicture.asset('assets/icons/booksActive.svg')),
+            icon: SvgPicture.asset(
+              'assets/icons/books.svg',
+              color: themeService.blackThemed,
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icons/booksActive.svg',
+              color: themeService.blackThemed,
+            ),
+          ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/icons/favorite.svg'),
-              activeIcon: SvgPicture.asset('assets/icons/favoriteActive.svg')),
+            icon: SvgPicture.asset(
+              'assets/icons/favorite.svg',
+              color: themeService.blackThemed,
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icons/favoriteActive.svg',
+              color: themeService.redThemed,
+            ),
+          ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/icons/settings.svg'),
-              activeIcon: SvgPicture.asset('assets/icons/settingActive.svg')),
+            icon: SvgPicture.asset(
+              'assets/icons/settings.svg',
+              color: themeService.blackThemed,
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/icons/settingActive.svg',
+              color: themeService.blackThemed,
+            ),
+          ),
         ],
-        backgroundColor: BWColors.peach,
+        backgroundColor: themeService.peachThemed,
       ),
       tabBuilder: (context, index) {
         if (index == 0) {

@@ -15,10 +15,11 @@ class SettingsView extends StatelessWidget {
       init: SettingsViewModel(),
       builder: (model) {
         return Scaffold(
-          backgroundColor: BWColors.beige,
+          backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
-            middle: Text(S.of(context).settings, style: BWStyle.headerStyle),
-            backgroundColor: BWColors.peach,
+            middle: Text(S.of(context).settings,
+                style: model.themeService.headerStyleThemed),
+            backgroundColor: model.themeService.peachThemed,
           ),
           body: Padding(
             padding: const EdgeInsets.only(top: 60, left: 16, right: 16),
@@ -29,6 +30,11 @@ class SettingsView extends StatelessWidget {
                   ItemRow(
                     icon: "assets/icons/user.svg",
                     text: S.of(context).signinout,
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: model.themeService.blackThemed,
+                      size: 20,
+                    ),
                   ),
                   const SizedBox(height: 5),
                   const Divider(),
@@ -36,6 +42,11 @@ class SettingsView extends StatelessWidget {
                   ItemRow(
                     icon: "assets/icons/world.svg",
                     text: S.of(context).languages,
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: model.themeService.blackThemed,
+                      size: 20,
+                    ),
                   ),
                   const SizedBox(height: 5),
                   const Divider(),
@@ -45,12 +56,13 @@ class SettingsView extends StatelessWidget {
                     text: S.of(context).darkMode,
                     trailing: CupertinoSwitch(
                       onChanged: model.updateDarkModeState,
-                      value: model.isDarkMode,
+                      value: model.themeService.isDarkMode,
                     ),
                     color: BWColors.purple,
                   ),
                   const SizedBox(height: 45),
-                  Text(S.of(context).textSize, style: BWStyle.headerStyle),
+                  Text(S.of(context).textSize,
+                      style: model.themeService.headerStyleThemed),
                   const SizedBox(height: 35),
                   SizeSlider(
                     value: model.scaleFactor,

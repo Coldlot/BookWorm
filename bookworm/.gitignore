@@ -30,6 +30,7 @@
 .pub-cache/
 .pub/
 /build/
+.DS_Store
 
 # Web related
 lib/generated_plugin_registrant.dart

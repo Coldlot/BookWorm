@@ -1,4 +1,3 @@
-import 'package:bookworm/res/res.dart';
 import 'package:bookworm/widgets/empty_placeholder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +14,14 @@ class BooksView extends StatelessWidget {
       init: BooksViewModel(),
       builder: (model) {
         return Scaffold(
-          backgroundColor: BWColors.beige,
+          backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
-            middle: Text(S.of(context).library, style: BWStyle.headerStyle),
-            trailing: SvgPicture.asset('assets/icons/downloadBook.svg'),
-            backgroundColor: BWColors.peach,
+            middle: Text(S.of(context).library, style: model.themeService.headerStyleThemed),
+            trailing: SvgPicture.asset(
+              'assets/icons/downloadBook.svg',
+              color: model.themeService.blackThemed,
+            ),
+            backgroundColor: model.themeService.peachThemed,
           ),
           body: SafeArea(
             child: Center(
