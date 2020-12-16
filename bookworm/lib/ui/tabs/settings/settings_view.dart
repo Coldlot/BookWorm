@@ -47,6 +47,7 @@ class SettingsView extends StatelessWidget {
                       color: model.themeService.blackThemed,
                       size: 20,
                     ),
+                    onTap: model.showLocaleSelection,
                   ),
                   const SizedBox(height: 5),
                   const Divider(),
@@ -64,10 +65,15 @@ class SettingsView extends StatelessWidget {
                   Text(S.of(context).textSize,
                       style: model.themeService.headerStyleThemed),
                   const SizedBox(height: 35),
-                  SizeSlider(
-                    value: model.scaleFactor,
-                    onChanged: model.updateScaleFactor,
+                  if (model.isBusy) ...[
+                    const CupertinoActivityIndicator(),
+                  ] else ...[
+                    SizeSlider(
+                    value: model.currentScaleFactor,
+                    onChanged: model.updateCurrentScaleFactor,
+                    onChangedEnd: model.updateScaleFactor,
                   ),
+                  ],
                 ],
               ),
             ),

@@ -6,10 +6,11 @@ import 'package:get/get.dart';
 class SizeSlider extends StatelessWidget {
   final double value;
   final Function(double) onChanged;
+  final Function(double) onChangedEnd;
 
   final themeService = Get.find<BWThemeService>();
 
-  SizeSlider({@required this.value, this.onChanged});
+  SizeSlider({@required this.value, this.onChanged, this.onChangedEnd});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class SizeSlider extends StatelessWidget {
             min: 0.5,
             max: 1.5,
             onChanged: onChanged,
+            onChangeEnd: onChangedEnd,
           ),
         ),
         Text('A', style: themeService.largeThemed),
