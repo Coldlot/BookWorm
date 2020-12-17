@@ -2,6 +2,7 @@ import 'package:bookworm/datamodels/appearence.dart';
 import 'package:bookworm/repositories/appearence_repository.dart';
 import 'package:bookworm/services/theme_service.dart';
 import 'package:bookworm/ui/splash/splash_view.dart';
+import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -40,16 +41,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      home: SplashView(),
-      supportedLocales: S.delegate.supportedLocales,
-      locale: Locale.fromSubtags(languageCode: languageCode),
-      localizationsDelegates: const [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        S.delegate,
-      ],
+    return ConnectivityAppWrapper(
+      app: GetMaterialApp(
+        home: SplashView(),
+        supportedLocales: S.delegate.supportedLocales,
+        locale: Locale.fromSubtags(languageCode: languageCode),
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          S.delegate,
+        ],
+      ),
     );
   }
 }

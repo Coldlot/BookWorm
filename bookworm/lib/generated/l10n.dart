@@ -45,10 +45,10 @@ class S {
     );
   }
 
-  /// `There is no anything yet`
+  /// `There is nothing yet`
   String get emptyList {
     return Intl.message(
-      'There is no anything yet',
+      'There is nothing yet',
       name: 'emptyList',
       desc: '',
       args: [],
@@ -130,6 +130,36 @@ class S {
     return Intl.message(
       'Text size',
       name: 'textSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error of reading file`
+  String get errorOfFile {
+    return Intl.message(
+      'Error of reading file',
+      name: 'errorOfFile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
       desc: '',
       args: [],
     );

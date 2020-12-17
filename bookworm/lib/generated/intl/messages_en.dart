@@ -22,11 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "darkMode" : MessageLookupByLibrary.simpleMessage("Dark mode"),
-    "emptyList" : MessageLookupByLibrary.simpleMessage("There is no anything yet"),
+    "emptyList" : MessageLookupByLibrary.simpleMessage("There is nothing yet"),
+    "error" : MessageLookupByLibrary.simpleMessage("Error"),
+    "errorOfFile" : MessageLookupByLibrary.simpleMessage("Error of reading file"),
     "languages" : MessageLookupByLibrary.simpleMessage("Languages"),
     "library" : MessageLookupByLibrary.simpleMessage("Library"),
     "myBooks" : MessageLookupByLibrary.simpleMessage("My Books"),
     "networkConnection" : MessageLookupByLibrary.simpleMessage("Network connection has been lost"),
+    "retry" : MessageLookupByLibrary.simpleMessage("Retry"),
     "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
     "signinout" : MessageLookupByLibrary.simpleMessage("Sign In / Sign Out"),
     "textSize" : MessageLookupByLibrary.simpleMessage("Text size"),

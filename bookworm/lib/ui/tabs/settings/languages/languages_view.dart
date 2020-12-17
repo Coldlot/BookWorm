@@ -22,26 +22,34 @@ class LanguagesView extends StatelessWidget {
                 style: model.themeService.headerStyleThemed),
             backgroundColor: model.themeService.peachThemed,
           ),
-          body: ListView.builder(
-            itemCount: model.languages.length,
-            itemBuilder: (context, index) {
-              return GestureDetector(
+          body: Padding(
+            padding: const EdgeInsets.only(left: 16, top: 15),
+            child: ListView.builder(
+              itemCount: model.languages.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
                   onTap: () {
                     model.changeLocalization(index);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, top: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(model.languages[index],
-                            style: model.themeService.headerStyleThemed),
-                        const SizedBox(height: 10),
-                        const Divider(),
-                      ],
-                    ),
-                  ));
-            },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(model.languages[index],
+                                style: model.themeService.headerStyleThemed),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      const Divider(),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
         );
       },

@@ -8,5 +8,8 @@
   "signinout": "Вход / Выход",
   "languages": "Языки",
   "darkMode": "Темная тема",
-  "textSize": "Размер текста"
+  "textSize": "Размер текста",
+  "error": "Ошибка",
+  "errorOfFile": "Ошибка чтения файла",
+  "retry": "Повторить"
 }

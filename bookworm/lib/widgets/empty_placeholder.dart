@@ -9,7 +9,8 @@ class EmptyPlaceholder extends StatelessWidget {
   final themeService = Get.find<BWThemeService>();
   final bool isInternetConnection;
   final Function onTap;
-  EmptyPlaceholder({this.isInternetConnection = false, this.onTap});
+  final Function onTapInternet;
+  EmptyPlaceholder({this.isInternetConnection = false, this.onTap, this.onTapInternet});
 
   List<String> _networkImages;
   List<String> _emptyImages;
@@ -19,9 +20,13 @@ class EmptyPlaceholder extends StatelessWidget {
     _networkImages = themeService.getNetworkImages();
     _emptyImages = themeService.getEmptyImages();
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
-            isInternetConnection ? _networkImages.first : _emptyImages.first),
+          isInternetConnection ? _networkImages.first : _emptyImages.first,
+          width: 200,
+          height: 200,
+        ),
         const SizedBox(height: 20),
         Text(
             isInternetConnection
@@ -34,6 +39,14 @@ class EmptyPlaceholder extends StatelessWidget {
             onPressed: onTap,
             child: Text(
               S.of(context).watchBooksList,
+              style: themeService.buttonTextStyleThemed,
+            ),
+          ),
+        if (isInternetConnection)
+          OutlineButton(
+            onPressed: onTapInternet,
+            child: Text(
+              S.of(context).retry,
               style: themeService.buttonTextStyleThemed,
             ),
           ),

@@ -30,9 +30,10 @@ class ItemRow extends StatelessWidget {
           SvgPicture.asset(icon,
               width: 30, height: 30, color: color ?? BWColors.darkGray),
           const SizedBox(width: 15),
-          Text(text, style: themeService.headerStyleThemed),
-          const Spacer(),
-          trailing,
+          Expanded(
+            child: Text(text, style: themeService.headerStyleThemed),
+          ),
+          trailing
         ],
       ),
     );

@@ -16,17 +16,27 @@ class BooksView extends StatelessWidget {
         return Scaffold(
           backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
-            middle: Text(S.of(context).library, style: model.themeService.headerStyleThemed),
-            trailing: SvgPicture.asset(
-              'assets/icons/downloadBook.svg',
-              color: model.themeService.blackThemed,
+            middle: Text(S.of(context).library,
+                style: model.themeService.headerStyleThemed),
+            trailing: GestureDetector(
+              onTap: model.downloadBookTapped,
+              child: SvgPicture.asset(
+                'assets/icons/downloadBook.svg',
+                color: model.themeService.blackThemed,
+              ),
             ),
             backgroundColor: model.themeService.peachThemed,
           ),
           body: SafeArea(
-            child: Center(
-              child: EmptyPlaceholder(),
-            ),
+            child: model.isBusy
+                ? const Center(child: CupertinoActivityIndicator())
+                : Container(
+                    child: model.isConnected
+                        ? SingleChildScrollView()
+                        : Center(
+                            child: EmptyPlaceholder(isInternetConnection: true),
+                        ),
+                  ),
           ),
         );
       },
