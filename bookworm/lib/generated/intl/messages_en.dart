@@ -23,15 +23,22 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "darkMode" : MessageLookupByLibrary.simpleMessage("Dark mode"),
     "emptyList" : MessageLookupByLibrary.simpleMessage("There is nothing yet"),
+    "enterCode" : MessageLookupByLibrary.simpleMessage("Enter the code from SMS"),
+    "enterYourNumber" : MessageLookupByLibrary.simpleMessage("Enter the phone number"),
     "error" : MessageLookupByLibrary.simpleMessage("Error"),
     "errorOfFile" : MessageLookupByLibrary.simpleMessage("Error of reading file"),
     "languages" : MessageLookupByLibrary.simpleMessage("Languages"),
     "library" : MessageLookupByLibrary.simpleMessage("Library"),
     "myBooks" : MessageLookupByLibrary.simpleMessage("My Books"),
     "networkConnection" : MessageLookupByLibrary.simpleMessage("Network connection has been lost"),
+    "recieveCode" : MessageLookupByLibrary.simpleMessage("Recieve code"),
+    "recieveNewCode" : MessageLookupByLibrary.simpleMessage("Recieve a new one"),
     "retry" : MessageLookupByLibrary.simpleMessage("Retry"),
     "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
+    "signin" : MessageLookupByLibrary.simpleMessage("Sign In"),
     "signinout" : MessageLookupByLibrary.simpleMessage("Sign In / Sign Out"),
+    "signout" : MessageLookupByLibrary.simpleMessage("Sign Out"),
+    "submit" : MessageLookupByLibrary.simpleMessage("Submit"),
     "textSize" : MessageLookupByLibrary.simpleMessage("Text size"),
     "watchBooksList" : MessageLookupByLibrary.simpleMessage("Go to the book list")
   };

@@ -23,15 +23,22 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "darkMode" : MessageLookupByLibrary.simpleMessage("Темная тема"),
     "emptyList" : MessageLookupByLibrary.simpleMessage("Здесь пока ничего нет"),
+    "enterCode" : MessageLookupByLibrary.simpleMessage("Введите код из SMS"),
+    "enterYourNumber" : MessageLookupByLibrary.simpleMessage("Введите номер телефона"),
     "error" : MessageLookupByLibrary.simpleMessage("Ошибка"),
     "errorOfFile" : MessageLookupByLibrary.simpleMessage("Ошибка чтения файла"),
     "languages" : MessageLookupByLibrary.simpleMessage("Языки"),
     "library" : MessageLookupByLibrary.simpleMessage("Библиотека"),
     "myBooks" : MessageLookupByLibrary.simpleMessage("Мои книги"),
     "networkConnection" : MessageLookupByLibrary.simpleMessage("Нет подключения к интернету"),
+    "recieveCode" : MessageLookupByLibrary.simpleMessage("Получить код"),
+    "recieveNewCode" : MessageLookupByLibrary.simpleMessage("Получить новый код"),
     "retry" : MessageLookupByLibrary.simpleMessage("Повторить"),
     "settings" : MessageLookupByLibrary.simpleMessage("Настройки"),
+    "signin" : MessageLookupByLibrary.simpleMessage("Вход"),
     "signinout" : MessageLookupByLibrary.simpleMessage("Вход / Выход"),
+    "signout" : MessageLookupByLibrary.simpleMessage("Выход"),
+    "submit" : MessageLookupByLibrary.simpleMessage("Подтвердить"),
     "textSize" : MessageLookupByLibrary.simpleMessage("Размер текста"),
     "watchBooksList" : MessageLookupByLibrary.simpleMessage("Перейти к просмотру книг")
   };

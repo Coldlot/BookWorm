@@ -6,10 +6,17 @@
   "myBooks": "Мои книги",
   "library": "Библиотека",
   "signinout": "Вход / Выход",
+  "signin": "Вход",
+  "signout": "Выход",
   "languages": "Языки",
   "darkMode": "Темная тема",
   "textSize": "Размер текста",
   "error": "Ошибка",
   "errorOfFile": "Ошибка чтения файла",
-  "retry": "Повторить"
+  "retry": "Повторить",
+  "recieveCode": "Получить код",
+  "enterYourNumber": "Введите номер телефона",
+  "submit": "Подтвердить",
+  "enterCode": "Введите код из SMS",
+  "recieveNewCode": "Получить новый код"
 }

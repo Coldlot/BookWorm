@@ -23,6 +23,13 @@ class BWTabBar extends StatefulWidget {
 
 class BWTabBarState extends State<BWTabBar> {
   final themeService = Get.find<BWThemeService>();
+  final controller = CupertinoTabController();
+
+  void showIndex(int index) {
+    setState(() {
+      controller.index = index;
+    });
+  }
 
   void update() {
     setState(() {});
@@ -31,6 +38,7 @@ class BWTabBarState extends State<BWTabBar> {
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
+      controller: controller,
       tabBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

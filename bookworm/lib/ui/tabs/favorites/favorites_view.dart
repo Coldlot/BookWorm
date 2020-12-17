@@ -20,7 +20,9 @@ class FavoritesView extends StatelessWidget {
           ),
           body: SafeArea(
             child: Center(
-              child: EmptyPlaceholder(),
+              child: EmptyPlaceholder(
+                onTap: model.showBooksList,
+              ),
             ),
           ),
         );

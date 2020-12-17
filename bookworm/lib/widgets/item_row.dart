@@ -1,4 +1,3 @@
-import 'package:bookworm/res/res.dart';
 import 'package:bookworm/services/theme_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

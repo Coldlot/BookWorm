@@ -105,6 +105,26 @@ class S {
     );
   }
 
+  /// `Sign In`
+  String get signin {
+    return Intl.message(
+      'Sign In',
+      name: 'signin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Out`
+  String get signout {
+    return Intl.message(
+      'Sign Out',
+      name: 'signout',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Languages`
   String get languages {
     return Intl.message(
@@ -160,6 +180,56 @@ class S {
     return Intl.message(
       'Retry',
       name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recieve code`
+  String get recieveCode {
+    return Intl.message(
+      'Recieve code',
+      name: 'recieveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the phone number`
+  String get enterYourNumber {
+    return Intl.message(
+      'Enter the phone number',
+      name: 'enterYourNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the code from SMS`
+  String get enterCode {
+    return Intl.message(
+      'Enter the code from SMS',
+      name: 'enterCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recieve a new one`
+  String get recieveNewCode {
+    return Intl.message(
+      'Recieve a new one',
+      name: 'recieveNewCode',
       desc: '',
       args: [],
     );

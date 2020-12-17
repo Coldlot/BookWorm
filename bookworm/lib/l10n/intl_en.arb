@@ -6,10 +6,17 @@
     "myBooks": "My Books",
     "library": "Library",
     "signinout": "Sign In / Sign Out",
+    "signin": "Sign In",
+  "signout": "Sign Out",
     "languages": "Languages",
     "darkMode": "Dark mode",
     "textSize": "Text size",
     "error": "Error",
     "errorOfFile": "Error of reading file",
-    "retry": "Retry"
+    "retry": "Retry",
+    "recieveCode": "Recieve code",
+    "enterYourNumber": "Enter the phone number",
+    "submit": "Submit",
+    "enterCode": "Enter the code from SMS",
+    "recieveNewCode": "Recieve a new one"
 }

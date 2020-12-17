@@ -3,6 +3,7 @@ import 'package:bookworm/datamodels/appearence.dart';
 import 'package:bookworm/repositories/appearence_repository.dart';
 import 'package:bookworm/services/theme_service.dart';
 import 'package:bookworm/ui/tabs/settings/languages/languages_view.dart';
+import 'package:bookworm/ui/tabs/settings/signin_out/signin_out_view.dart';
 import 'package:bookworm/ui/tabs/tabs.dart';
 import 'package:get/get.dart';
 
@@ -60,5 +61,9 @@ class SettingsViewModel extends GetxBaseViewModel {
 
   void showLocaleSelection() {
     Get.to(LanguagesView());
+  }
+
+  void showSignInOutScreen() {
+    Get.to(SignInOutView());
   }
 }

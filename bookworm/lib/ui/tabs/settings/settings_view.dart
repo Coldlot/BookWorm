@@ -35,6 +35,7 @@ class SettingsView extends StatelessWidget {
                       color: model.themeService.blackThemed,
                       size: 20,
                     ),
+                    onTap: model.showSignInOutScreen,
                   ),
                   const SizedBox(height: 5),
                   const Divider(),
