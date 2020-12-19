@@ -29,31 +29,3 @@ class BooksGrid extends StatelessWidget {
     );
   }
 }
-
-// [
-//         BookThumb(
-//           image: "assets/images/test.png",
-//           bookName: 'Агент в кринолине - Хорватова Елена - ...',
-//           onTap: model.showDetails,
-//         ),
-//         BookThumb(
-//           image: "assets/images/test.png",
-//           bookName: 'Агент в кринолине - Хорватова Елена - ...',
-//         ),
-//         BookThumb(
-//           image: "assets/images/test.png",
-//           bookName: 'Агент в кринолине - Хорватова Елена - ...',
-//         ),
-//         BookThumb(
-//           image: "assets/images/test.png",
-//           bookName: 'Агент в кринолине - Хорватова Елена - ...',
-//         ),
-//         BookThumb(
-//           image: "assets/images/test.png",
-//           bookName: 'Агент в кринолине - Хорватова Елена - ...',
-//         ),
-//         BookThumb(
-//           image: "assets/images/test.png",
-//           bookName: 'Агент в кринолине - Хорватова Елена - ...',
-//         ),
-//       ],

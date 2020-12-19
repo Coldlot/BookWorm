@@ -21,14 +21,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "author" : MessageLookupByLibrary.simpleMessage("Автор:"),
+    "author" : MessageLookupByLibrary.simpleMessage("Автор: "),
     "darkMode" : MessageLookupByLibrary.simpleMessage("Темная тема"),
     "emptyList" : MessageLookupByLibrary.simpleMessage("Здесь пока ничего нет"),
     "enterCode" : MessageLookupByLibrary.simpleMessage("Введите код из SMS"),
     "enterYourNumber" : MessageLookupByLibrary.simpleMessage("Введите номер телефона"),
     "error" : MessageLookupByLibrary.simpleMessage("Ошибка"),
     "errorOfFile" : MessageLookupByLibrary.simpleMessage("Ошибка чтения файла"),
-    "genre" : MessageLookupByLibrary.simpleMessage("Жанр:"),
+    "genre" : MessageLookupByLibrary.simpleMessage("Жанр: "),
     "languages" : MessageLookupByLibrary.simpleMessage("Языки"),
     "library" : MessageLookupByLibrary.simpleMessage("Библиотека"),
     "myBooks" : MessageLookupByLibrary.simpleMessage("Мои книги"),
@@ -43,8 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "signout" : MessageLookupByLibrary.simpleMessage("Выход"),
     "submit" : MessageLookupByLibrary.simpleMessage("Подтвердить"),
     "textSize" : MessageLookupByLibrary.simpleMessage("Размер текста"),
-    "title" : MessageLookupByLibrary.simpleMessage("Название:"),
+    "title" : MessageLookupByLibrary.simpleMessage("Название: "),
     "unavailable" : MessageLookupByLibrary.simpleMessage("Эта фича в данный момент недоступна"),
+    "unknown" : MessageLookupByLibrary.simpleMessage("Неизвестно"),
     "watchBooksList" : MessageLookupByLibrary.simpleMessage("Перейти к просмотру книг")
   };
 }

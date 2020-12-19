@@ -3,8 +3,10 @@ import 'package:bookworm/datamodels/book.dart';
 import 'package:bookworm/generated/l10n.dart';
 import 'package:bookworm/ui/book_details.dart/book_details_view_model.dart';
 import 'package:bookworm/widgets/favorite.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 class BookDetailsView extends StatelessWidget {
@@ -13,6 +15,7 @@ class BookDetailsView extends StatelessWidget {
   const BookDetailsView({@required this.book});
 
   //TODO: fix ui
+  //TODO: heart state  
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BookDetailsViewModel>(
@@ -21,7 +24,7 @@ class BookDetailsView extends StatelessWidget {
         return Scaffold(
           backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
-            trailing: GestureDetector(
+            trailing: model.isBusy ? Container() : GestureDetector(
               onTap: model.toggleToFavorites,
               child: Favorite(isFavorite: model.isFavorite),
             ),
@@ -44,8 +47,10 @@ class BookDetailsView extends StatelessWidget {
                   Row(
                     children: [
                       Image(
-                        //to NetworkImage
-                        image: AssetImage(model.book.thumbUrl),
+                        image: book.isExternal
+                            ? SvgPicture.asset("assets/book_logo.svg",
+                                color: model.themeService.blackThemed)
+                            : CachedNetworkImageProvider(model.book.thumbUrl),
                         width: 146,
                         height: 200,
                       ),
@@ -111,7 +116,7 @@ class BookDetailsView extends StatelessWidget {
                     borderSide: BorderSide(
                       color: model.themeService.blackThemed,
                     ),
-                    onPressed: null,
+                    onPressed: model.showContent,
                     child: Text(
                       S.of(context).read,
                       style: model.themeService.buttonTextStyleThemed,

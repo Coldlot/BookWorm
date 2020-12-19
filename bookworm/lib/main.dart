@@ -1,6 +1,6 @@
 import 'package:bookworm/api/books_api.dart';
 import 'package:bookworm/datamodels/appearence.dart';
-import 'package:bookworm/datamodels/book.dart';
+import 'package:bookworm/datamodels/favorite_list.dart';
 import 'package:bookworm/repositories/appearence_repository.dart';
 import 'package:bookworm/repositories/favorite_book_repository.dart';
 import 'package:bookworm/services/theme_service.dart';
@@ -15,6 +15,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:get/get.dart';
 import 'package:dio/dio.dart';
 
+import 'datamodels/book.dart';
 import 'generated/l10n.dart';
 
 Future<void> main() async {
@@ -23,9 +24,11 @@ Future<void> main() async {
 
   /// HIVE:
   /// [AppearenceModel] - 0
-  /// [BookModel] - 1
+  /// [FavoriteList] - 1
+  /// [BookModel] - 2
   Hive
     ..registerAdapter(AppearenceModelAdapter())
+    ..registerAdapter(FavoriteListAdapter())
     ..registerAdapter(BookModelAdapter());
 
   final appearenceRepository = AppearenceRepository();

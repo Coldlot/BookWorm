@@ -20,8 +20,9 @@
   "enterCode": "Enter the code from SMS",
   "recieveNewCode": "Recieve a new one",
   "read": "Read the book",
-  "title": "Title:",
-  "author": "Author:",
-  "genre": "Genre:",
-  "unavailable": "This feature is unavailable now"
+  "title": "Title: ",
+  "author": "Author: ",
+  "genre": "Genre: ",
+  "unavailable": "This feature is unavailable now",
+  "unknown": "Unknown"
 }

@@ -34,4 +34,24 @@ class _BooksApi implements BooksApi {
         .toList();
     return value;
   }
+
+  @override
+  Future<List<BookModel>> filterBooks(predicate) async {
+    ArgumentError.checkNotNull(predicate, 'predicate');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.request<List<dynamic>>('/filterBooks/$predicate',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    var value = _result.data
+        .map((dynamic i) => BookModel.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
 }

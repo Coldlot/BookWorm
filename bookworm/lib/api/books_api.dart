@@ -10,4 +10,7 @@ abstract class BooksApi {
 
   @GET("/getBooks")
   Future<List<BookModel>> getBooks();
+
+  @GET("/filterBooks/{predicate}")
+  Future<List<BookModel>> filterBooks(@Path("predicate") String predicate);
 }

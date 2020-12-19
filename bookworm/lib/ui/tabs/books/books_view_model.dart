@@ -35,18 +35,24 @@ class BooksViewModel extends GetxBaseViewModel {
 
     if (result != null) {
       final file = result.files.first;
+      final book = BookModel(
+        title: file.name.split(".").first,
+        author: S.of(Get.context).unknown,
+        genre: S.of(Get.context).unknown,
+        description: S.of(Get.context).unknown,
+        thumbUrl: "placeholder",
+        fileUrl: file.path,
+        isExternal: true,
+      );
       switch (result.files.first.extension) {
         case 'pdf':
-          Get.to(ReadingPageView(
-              filePath: file.path, scaleFactor: scaleFactor, title: file.name));
+          Get.to(ReadingPageView(book: book, scaleFactor: scaleFactor));
           break;
         case 'txt':
-          Get.to(ReadingPageView(
-              filePath: file.path, scaleFactor: scaleFactor, title: file.name));
+          Get.to(ReadingPageView(book: book, scaleFactor: scaleFactor));
           break;
         case 'doc':
-          Get.to(ReadingPageView(
-              filePath: file.path, scaleFactor: scaleFactor, title: file.name));
+          Get.to(ReadingPageView(book: book, scaleFactor: scaleFactor));
           break;
         case 'epub':
           //empty

@@ -1,3 +1,4 @@
+import 'package:bookworm/datamodels/book.dart';
 import 'package:bookworm/ui/reading_page/reading_page_view_model.dart';
 import 'package:bookworm/widgets/favorite.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,15 +7,13 @@ import 'package:flutter_filereader/flutter_filereader.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 class ReadingPageView extends StatelessWidget {
-  final String filePath;
+  final BookModel book;
   final double scaleFactor;
-  final String title;
   final bool isEpub;
 
   const ReadingPageView({
-    @required this.filePath,
+    @required this.book,
     @required this.scaleFactor,
-    @required this.title,
     this.isEpub = false,
   });
 
@@ -31,7 +30,7 @@ class ReadingPageView extends StatelessWidget {
               child: Icon(Icons.arrow_back_ios,
                   color: model.themeService.blackThemed),
             ),
-            middle: Text(title, style: model.themeService.headerStyleThemed),
+            middle: Text(book.title, style: model.themeService.headerStyleThemed),
             trailing: GestureDetector(
               onTap: model.toggleToFavorites,
               child: Favorite(isFavorite: model.isFavorite),
@@ -39,10 +38,11 @@ class ReadingPageView extends StatelessWidget {
             backgroundColor: model.themeService.peachThemed,
           ),
           body: SafeArea(
-              child: FileReaderView(
-                      loadingWidget: const CupertinoActivityIndicator(),
-                      filePath: filePath,
-                    )),
+            child: FileReaderView(
+              loadingWidget: const CupertinoActivityIndicator(),
+              filePath: book.fileUrl,
+            ),
+          ),
         );
       },
     );

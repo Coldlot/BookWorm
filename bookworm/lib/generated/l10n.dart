@@ -245,30 +245,30 @@ class S {
     );
   }
 
-  /// `Title:`
+  /// `Title: `
   String get title {
     return Intl.message(
-      'Title:',
+      'Title: ',
       name: 'title',
       desc: '',
       args: [],
     );
   }
 
-  /// `Author:`
+  /// `Author: `
   String get author {
     return Intl.message(
-      'Author:',
+      'Author: ',
       name: 'author',
       desc: '',
       args: [],
     );
   }
 
-  /// `Genre:`
+  /// `Genre: `
   String get genre {
     return Intl.message(
-      'Genre:',
+      'Genre: ',
       name: 'genre',
       desc: '',
       args: [],
@@ -280,6 +280,16 @@ class S {
     return Intl.message(
       'This feature is unavailable now',
       name: 'unavailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get unknown {
+    return Intl.message(
+      'Unknown',
+      name: 'unknown',
       desc: '',
       args: [],
     );

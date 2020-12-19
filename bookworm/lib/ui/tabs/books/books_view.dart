@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '../../../generated/l10n.dart';
 import 'books_view_model.dart';
 
+//TODO: add search
 class BooksView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

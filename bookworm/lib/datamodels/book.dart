@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 
 part 'book.g.dart';
 
-@HiveType(typeId: 1)
+@HiveType(typeId: 3)
 @JsonSerializable(
     nullable: false, fieldRename: FieldRename.snake, explicitToJson: false)
 class BookModel {

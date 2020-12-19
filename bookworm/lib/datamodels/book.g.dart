@@ -8,7 +8,7 @@ part of 'book.dart';
 
 class BookModelAdapter extends TypeAdapter<BookModel> {
   @override
-  final int typeId = 1;
+  final int typeId = 3;
 
   @override
   BookModel read(BinaryReader reader) {
