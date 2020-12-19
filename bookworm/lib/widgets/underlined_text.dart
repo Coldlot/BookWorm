@@ -21,6 +21,12 @@ class UnderlinedText extends StatelessWidget {
             style: themeService.illustrationStyleThemed.copyWith(
               color: themeService.isDarkMode ? BWColors.white : BWColors.black,
             ),
+          ),
+          const SizedBox(height: 2),
+          Container(
+            height: 1,
+            width: text.length.toDouble() * 11,
+            color: themeService.blackThemed,
           )
         ],
       ),

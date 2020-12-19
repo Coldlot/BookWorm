@@ -21,16 +21,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "author" : MessageLookupByLibrary.simpleMessage("Author:"),
     "darkMode" : MessageLookupByLibrary.simpleMessage("Dark mode"),
     "emptyList" : MessageLookupByLibrary.simpleMessage("There is nothing yet"),
     "enterCode" : MessageLookupByLibrary.simpleMessage("Enter the code from SMS"),
     "enterYourNumber" : MessageLookupByLibrary.simpleMessage("Enter the phone number"),
     "error" : MessageLookupByLibrary.simpleMessage("Error"),
     "errorOfFile" : MessageLookupByLibrary.simpleMessage("Error of reading file"),
+    "genre" : MessageLookupByLibrary.simpleMessage("Genre:"),
     "languages" : MessageLookupByLibrary.simpleMessage("Languages"),
     "library" : MessageLookupByLibrary.simpleMessage("Library"),
     "myBooks" : MessageLookupByLibrary.simpleMessage("My Books"),
     "networkConnection" : MessageLookupByLibrary.simpleMessage("Network connection has been lost"),
+    "read" : MessageLookupByLibrary.simpleMessage("Read the book"),
     "recieveCode" : MessageLookupByLibrary.simpleMessage("Recieve code"),
     "recieveNewCode" : MessageLookupByLibrary.simpleMessage("Recieve a new one"),
     "retry" : MessageLookupByLibrary.simpleMessage("Retry"),
@@ -40,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "signout" : MessageLookupByLibrary.simpleMessage("Sign Out"),
     "submit" : MessageLookupByLibrary.simpleMessage("Submit"),
     "textSize" : MessageLookupByLibrary.simpleMessage("Text size"),
+    "title" : MessageLookupByLibrary.simpleMessage("Title:"),
+    "unavailable" : MessageLookupByLibrary.simpleMessage("This feature is unavailable now"),
     "watchBooksList" : MessageLookupByLibrary.simpleMessage("Go to the book list")
   };
 }

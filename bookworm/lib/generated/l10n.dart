@@ -234,6 +234,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Read the book`
+  String get read {
+    return Intl.message(
+      'Read the book',
+      name: 'read',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title:`
+  String get title {
+    return Intl.message(
+      'Title:',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Author:`
+  String get author {
+    return Intl.message(
+      'Author:',
+      name: 'author',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Genre:`
+  String get genre {
+    return Intl.message(
+      'Genre:',
+      name: 'genre',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This feature is unavailable now`
+  String get unavailable {
+    return Intl.message(
+      'This feature is unavailable now',
+      name: 'unavailable',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,9 +1,9 @@
 import 'package:bookworm/app/getx_base_view_model.dart';
 import 'package:bookworm/datamodels/appearence.dart';
+import 'package:bookworm/generated/l10n.dart';
 import 'package:bookworm/repositories/appearence_repository.dart';
 import 'package:bookworm/services/theme_service.dart';
 import 'package:bookworm/ui/tabs/settings/languages/languages_view.dart';
-import 'package:bookworm/ui/tabs/settings/signin_out/signin_out_view.dart';
 import 'package:bookworm/ui/tabs/tabs.dart';
 import 'package:get/get.dart';
 
@@ -64,6 +64,11 @@ class SettingsViewModel extends GetxBaseViewModel {
   }
 
   void showSignInOutScreen() {
-    Get.to(SignInOutView());
+    //Get.to(SignInOutView());
+    Get.snackbar(
+      S.of(Get.context).error, 
+      S.of(Get.context).unavailable,
+      colorText: themeService.blackThemed,
+    );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:bookworm/widgets/book_thumb.dart';
+import 'package:bookworm/widgets/books_grid.dart';
 import 'package:bookworm/widgets/empty_placeholder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class BooksView extends StatelessWidget {
             middle: Text(S.of(context).library,
                 style: model.themeService.headerStyleThemed),
             trailing: GestureDetector(
-              onTap: model.downloadBookTapped,
+              onTap: model.addExternalBook,
               child: SvgPicture.asset(
                 'assets/icons/downloadBook.svg',
                 color: model.themeService.blackThemed,
@@ -32,46 +32,19 @@ class BooksView extends StatelessWidget {
             child: model.isBusy
                 ? const Center(child: CupertinoActivityIndicator())
                 : Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 25),
                     child: model.isConnected
-                        ? GridView.count(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 23,
-                          mainAxisSpacing: 27,
-                          childAspectRatio: 0.7,
-                          children: [
-                            BookThumb(
-                              image: "assets/images/test.png",
-                              bookName: 'Агент в кринолине - Хорватова Елена - ...',
-                            ),
-                            BookThumb(
-                              image: "assets/images/test.png",
-                              bookName: 'Агент в кринолине - Хорватова Елена - ...',
-                            ),
-                            BookThumb(
-                              image: "assets/images/test.png",
-                              bookName: 'Агент в кринолине - Хорватова Елена - ...',
-                            ),
-                            BookThumb(
-                              image: "assets/images/test.png",
-                              bookName: 'Агент в кринолине - Хорватова Елена - ...',
-                            ),
-                            BookThumb(
-                              image: "assets/images/test.png",
-                              bookName: 'Агент в кринолине - Хорватова Елена - ...',
-                            ),
-                            BookThumb(
-                              image: "assets/images/test.png",
-                              bookName: 'Агент в кринолине - Хорватова Елена - ...',
-                            ),
-                          ],
-                        )
+                        ? BooksGrid(
+                            books: model.books,
+                            onThumbTap: model.showDetails,
+                          )
                         : Center(
                             child: EmptyPlaceholder(
                               isInternetConnection: true,
-                              onTapInternet: model.checkConnection,
+                              onTapInternet: model.downloadBooks,
                             ),
-                        ),
+                          ),
                   ),
           ),
         );
