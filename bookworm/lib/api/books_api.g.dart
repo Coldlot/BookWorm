@@ -9,7 +9,7 @@ part of 'books_api.dart';
 class _BooksApi implements BooksApi {
   _BooksApi(this._dio, {this.baseUrl}) {
     ArgumentError.checkNotNull(_dio, '_dio');
-    baseUrl ??= 'http://127.0.0.1:5000';
+    baseUrl ??= 'https://spbstu-books-api.herokuapp.com';
   }
 
   final Dio _dio;

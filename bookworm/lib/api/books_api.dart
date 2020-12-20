@@ -4,7 +4,7 @@ import 'package:retrofit/retrofit.dart';
 
 part 'books_api.g.dart';
 
-@RestApi(baseUrl: "http://127.0.0.1:5000")
+@RestApi(baseUrl: "https://spbstu-books-api.herokuapp.com")
 abstract class BooksApi {
   factory BooksApi(Dio dio, {String baseUrl}) = _BooksApi;
 
