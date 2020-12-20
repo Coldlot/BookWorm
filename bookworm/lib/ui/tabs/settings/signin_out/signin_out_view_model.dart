@@ -13,6 +13,7 @@ class SignInOutViewModel extends GetxBaseViewModel {
   bool get isSignIn => _isSignIn;
 
   bool _hasError = false;
+  // ignore: annotate_overrides
   bool get hasError => _hasError;
   void setHasError(String value) {
     _hasError = false;

@@ -26,7 +26,8 @@ class BookDetailsViewModel extends GetxBaseViewModel {
   Future<void> handleFavoriteState() async {
     setBusy(true);
     final favoriteList = await favoritesRepo.getFavoriteBooks();
-    _isFavorite = favoriteList.favorites.contains(book);
+    _isFavorite =
+        favoriteList.favorites.map((e) => e.title == book.title).contains(true);
     setBusy(false);
     update();
   }
@@ -36,7 +37,8 @@ class BookDetailsViewModel extends GetxBaseViewModel {
     if (!_isFavorite) {
       favoriteList.favorites.add(book);
     } else {
-      favoriteList.favorites.remove(book);
+      favoriteList.favorites
+          .removeWhere((element) => element.title == book.title);
     }
     await favoritesRepo.clear();
     await favoritesRepo.saveBooks(favoriteList);
@@ -48,6 +50,10 @@ class BookDetailsViewModel extends GetxBaseViewModel {
   Future<void> showContent() async {
     final scale = (await appearence.getAppearence()).scaleFactor;
     Get.to(ReadingPageView(book: book, scaleFactor: scale));
+  }
+
+  void dismiss() {
+    Get.back();
   }
 
   BookDetailsViewModel({@required this.book});

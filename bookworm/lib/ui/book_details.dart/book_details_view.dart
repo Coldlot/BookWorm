@@ -15,7 +15,6 @@ class BookDetailsView extends StatelessWidget {
   const BookDetailsView({@required this.book});
 
   //TODO: fix ui
-  //TODO: heart state  
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BookDetailsViewModel>(
@@ -24,6 +23,11 @@ class BookDetailsView extends StatelessWidget {
         return Scaffold(
           backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
+            leading: GestureDetector(
+              onTap: model.dismiss,
+              child: Icon(Icons.arrow_back_ios,
+                  color: model.themeService.blackThemed),
+            ),
             trailing: model.isBusy ? Container() : GestureDetector(
               onTap: model.toggleToFavorites,
               child: Favorite(isFavorite: model.isFavorite),
@@ -31,11 +35,9 @@ class BookDetailsView extends StatelessWidget {
             middle: AutoSizeText(
               model.book.title,
               style: model.themeService.headerStyleThemed,
-              maxLines: 2,
-              overflowReplacement: Text(
-                "...",
-                style: model.themeService.headerStyleThemed,
-              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
             ),
             backgroundColor: model.themeService.peachThemed,
           ),

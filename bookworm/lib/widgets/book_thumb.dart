@@ -70,11 +70,8 @@ class BookThumb extends StatelessWidget {
                   style: themeService.nameOfBookThemed,
                   textAlign: TextAlign.center,
                   softWrap: true,
+                  overflow: TextOverflow.ellipsis,
                   maxLines: 2,
-                  overflowReplacement: Text(
-                    '...',
-                    style: themeService.nameOfBookThemed,
-                  ),
                 ),
               )
             ],
