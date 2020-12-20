@@ -1,5 +1,6 @@
 import 'package:bookworm/app/getx_base_view_model.dart';
 import 'package:bookworm/datamodels/book.dart';
+import 'package:bookworm/datamodels/favorite_list.dart';
 import 'package:bookworm/repositories/favorite_book_repository.dart';
 import 'package:bookworm/services/theme_service.dart';
 import 'package:bookworm/ui/book_details.dart/book_details_view.dart';
@@ -12,6 +13,9 @@ class FavoritesViewModel extends GetxBaseViewModel {
 
   List<BookModel> favorites;
 
+  bool _isEditingMode = false;
+  bool get isEditingMode => _isEditingMode;
+
   @override
   Future<void> onInit() async {
     super.onInit();
@@ -22,6 +26,25 @@ class FavoritesViewModel extends GetxBaseViewModel {
     setBusy(true);
     favorites = (await favoritesRepository.getFavoriteBooks()).favorites;
     setBusy(false);
+    update();
+  }
+
+  void refreshBooks() {
+    fetchFavorites();
+  }
+
+  //TODO: create fucking alert
+  Future<void> deleteChosenFavorite(int index) async {
+    favorites.removeAt(index);
+    await favoritesRepository.clear();
+    final fl = FavoriteList();
+    fl.favorites = favorites;
+    await favoritesRepository.saveBooks(fl);
+    update();
+  }
+
+  void toggleEditMode() {
+    _isEditingMode = !_isEditingMode;
     update();
   }
 

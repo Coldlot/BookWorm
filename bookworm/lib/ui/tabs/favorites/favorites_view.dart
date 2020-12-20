@@ -9,8 +9,6 @@ import '../../../generated/l10n.dart';
 import 'favorites_view_model.dart';
 
 
-//TODO: fix update state
-//TODO: add edit pencil actions
 //TODO: add search
 class FavoritesView extends StatelessWidget {
   @override
@@ -21,11 +19,15 @@ class FavoritesView extends StatelessWidget {
         return Scaffold(
           backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
+            leading: GestureDetector(
+              onTap: model.refreshBooks,
+              child: Icon(Icons.refresh, color: model.themeService.blackThemed),
+            ),
             middle: Text(S.of(context).myBooks,
                 style: model.themeService.headerStyleThemed),
             backgroundColor: model.themeService.peachThemed,
-            trailing: GestureDetector(
-              onTap: null,
+            trailing: !model.isBusy && model.favorites.isEmpty ? const SizedBox(width: 0, height: 0) : GestureDetector(
+              onTap: model.toggleEditMode,
               child: SvgPicture.asset(
                 "assets/icons/edit.svg",
                 color: model.themeService.blackThemed,
@@ -47,6 +49,8 @@ class FavoritesView extends StatelessWidget {
                         : BooksGrid(
                             books: model.favorites,
                             onThumbTap: model.showDetails,
+                            isEditingMode: model.isEditingMode,
+                            onThumbDelete: model.deleteChosenFavorite,
                           ),
                   ),
           ),

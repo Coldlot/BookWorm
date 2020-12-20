@@ -24,5 +24,8 @@
   "author": "Author: ",
   "genre": "Genre: ",
   "unavailable": "This feature is unavailable now",
-  "unknown": "Unknown"
+  "unknown": "Unknown",
+  "deleteConfirmation": "Do you wanna delete this book from your favorites?",
+  "cancel": "Cancel",
+  "ok": "OK"
 }

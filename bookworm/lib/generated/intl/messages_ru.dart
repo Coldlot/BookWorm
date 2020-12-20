@@ -22,7 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "author" : MessageLookupByLibrary.simpleMessage("Автор: "),
+    "cancel" : MessageLookupByLibrary.simpleMessage("Отмена"),
     "darkMode" : MessageLookupByLibrary.simpleMessage("Темная тема"),
+    "deleteConfirmation" : MessageLookupByLibrary.simpleMessage("Вы действительно хотите удалить эту книгу из избранных?"),
     "emptyList" : MessageLookupByLibrary.simpleMessage("Здесь пока ничего нет"),
     "enterCode" : MessageLookupByLibrary.simpleMessage("Введите код из SMS"),
     "enterYourNumber" : MessageLookupByLibrary.simpleMessage("Введите номер телефона"),
@@ -33,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "library" : MessageLookupByLibrary.simpleMessage("Библиотека"),
     "myBooks" : MessageLookupByLibrary.simpleMessage("Мои книги"),
     "networkConnection" : MessageLookupByLibrary.simpleMessage("Нет подключения к интернету"),
+    "ok" : MessageLookupByLibrary.simpleMessage("ОК"),
     "read" : MessageLookupByLibrary.simpleMessage("Читать книгу"),
     "recieveCode" : MessageLookupByLibrary.simpleMessage("Получить код"),
     "recieveNewCode" : MessageLookupByLibrary.simpleMessage("Получить новый код"),

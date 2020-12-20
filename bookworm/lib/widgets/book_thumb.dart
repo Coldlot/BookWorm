@@ -52,11 +52,11 @@ class BookThumb extends StatelessWidget {
             overflow: Overflow.visible,
             children: [
               if (isEditingMode)
-                GestureDetector(
-                  onTap: onDelete,
-                  child: Positioned(
-                    top: -8,
-                    right: -1,
+                Positioned(
+                  top: -8,
+                  right: -1,
+                  child: GestureDetector(
+                    onTap: onDelete,
                     child: SvgPicture.asset(
                       "assets/icons/delete.svg",
                       color: themeService.redThemed,

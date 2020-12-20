@@ -294,6 +294,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Do you wanna delete this book from your favorites?`
+  String get deleteConfirmation {
+    return Intl.message(
+      'Do you wanna delete this book from your favorites?',
+      name: 'deleteConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message(
+      'OK',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

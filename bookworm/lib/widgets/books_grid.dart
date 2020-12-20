@@ -6,8 +6,11 @@ import 'book_thumb.dart';
 class BooksGrid extends StatelessWidget {
   final Function(int) onThumbTap;
   final List<BookModel> books;
+  final bool isEditingMode;
+  final Function(int) onThumbDelete;
 
-  const BooksGrid({@required this.books, this.onThumbTap});
+  const BooksGrid(
+      {@required this.books, this.onThumbTap, this.onThumbDelete, this.isEditingMode = false});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +26,8 @@ class BooksGrid extends StatelessWidget {
             image: books[index].thumbUrl,
             bookName: books[index].title,
             onTap: () => onThumbTap(index),
+            isEditingMode: isEditingMode,
+            onDelete: () => onThumbDelete(index),
           );
         },
       ),
