@@ -44,8 +44,6 @@ class FavoritesViewModel extends GetxBaseViewModel {
     update();
   }
 
-  void filter(String predicate) {}
-
   void toggleEditMode() {
     _isEditingMode = !_isEditingMode;
     update();

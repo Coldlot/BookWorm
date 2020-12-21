@@ -1,4 +1,3 @@
-import 'package:bookworm/widgets/book_search.dart';
 import 'package:bookworm/widgets/books_grid.dart';
 import 'package:bookworm/widgets/empty_placeholder.dart';
 import 'package:flutter/cupertino.dart';
@@ -38,40 +37,21 @@ class FavoritesView extends StatelessWidget {
           body: SafeArea(
             child: model.isBusy
                 ? const Center(child: CupertinoActivityIndicator())
-                : Stack(
-                    children: [
-                      if (model.favorites.isNotEmpty)
-                        Positioned(
-                          top: 5,
-                          left: 30,
-                          right: 30,
-                          child: BookSearch(
-                            onChange: model.filter,
+                : Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 25),
+                    child: model.favorites.isEmpty
+                        ? Center(
+                            child: EmptyPlaceholder(
+                              onTap: model.showBooksList,
+                            ),
+                          )
+                        : BooksGrid(
+                            books: model.favorites,
+                            onThumbTap: model.showDetails,
+                            isEditingMode: model.isEditingMode,
+                            onThumbDelete: model.deleteChosenFavorite,
                           ),
-                        ),
-                      Positioned(
-                        top: 15,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 25),
-                          child: model.favorites.isEmpty
-                              ? Center(
-                                  child: EmptyPlaceholder(
-                                    onTap: model.showBooksList,
-                                  ),
-                                )
-                              : BooksGrid(
-                                  books: model.favorites,
-                                  onThumbTap: model.showDetails,
-                                  isEditingMode: model.isEditingMode,
-                                  onThumbDelete: model.deleteChosenFavorite,
-                                ),
-                        ),
-                      ),
-                    ],
                   ),
           ),
         );
