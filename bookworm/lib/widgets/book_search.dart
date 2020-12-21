@@ -7,9 +7,9 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
 
 class BookSearch extends StatelessWidget {
-  final Function(String) onSubmit;
+  final Function(String) onChange;
 
-  const BookSearch({this.onSubmit});
+  const BookSearch({this.onChange});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BookSearch extends StatelessWidget {
           clearButtonMode: OverlayVisibilityMode.editing,
           placeholder: S.of(context).search,
           placeholderStyle: model.themeService.headerStyleThemed,
-          onSubmitted: onSubmit,
+          onChanged: onChange,
         );
       },
     );

@@ -40,7 +40,7 @@ class BooksView extends StatelessWidget {
                           left: 30,
                           right: 30,
                           child: BookSearch(
-                            onSubmit: model.filter,
+                            onChange: model.filter,
                           ),
                         ),
                       Positioned(
@@ -53,7 +53,7 @@ class BooksView extends StatelessWidget {
                               horizontal: 30, vertical: 25),
                           child: model.isConnected
                               ? BooksGrid(
-                                  books: model.books,
+                                  books: model.filteredBooks,
                                   onThumbTap: model.showDetails,
                                 )
                               : Center(

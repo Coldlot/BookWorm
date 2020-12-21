@@ -16,7 +16,8 @@ class BooksViewModel extends GetxBaseViewModel {
   final booksApi = Get.find<BooksApi>();
 
   bool isConnected;
-  List<BookModel> books;
+  List<BookModel> _books;
+  List<BookModel> filteredBooks;
 
   @override
   Future<void> onInit() async {
@@ -62,18 +63,24 @@ class BooksViewModel extends GetxBaseViewModel {
     setBusy(true);
     isConnected = await ConnectivityWrapper.instance.isConnected;
     if (isConnected) {
-      books = await booksApi.getBooks();
-      logger.i(books);
+      _books = await booksApi.getBooks();
+      logger.i(_books);
+      filteredBooks = _books;
     }
     setBusy(false);
     update();
   }
 
   void filter(String predicate) {
-    print(predicate);
+    final reg = RegExp("$predicate.+", caseSensitive: false);
+    final iterable = _books.where((element) {
+      return reg.hasMatch(element.title);
+    });
+    filteredBooks = iterable.toList();
+    update();
   }
 
   void showDetails(int index) {
-    Get.to(BookDetailsView(book: books[index]));
+    Get.to(BookDetailsView(book: filteredBooks[index]));
   }
 }

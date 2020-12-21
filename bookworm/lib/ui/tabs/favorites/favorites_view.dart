@@ -46,7 +46,7 @@ class FavoritesView extends StatelessWidget {
                           left: 30,
                           right: 30,
                           child: BookSearch(
-                            onSubmit: model.filter,
+                            onChange: model.filter,
                           ),
                         ),
                       Positioned(

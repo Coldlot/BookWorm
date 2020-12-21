@@ -40,15 +40,11 @@ class FavoritesViewModel extends GetxBaseViewModel {
     final fl = FavoriteList();
     fl.favorites = favorites;
     await favoritesRepository.saveBooks(fl);
-    if (favorites.isEmpty) {
-      _isEditingMode = false;
-    }
+    if (favorites.isEmpty) _isEditingMode = false;
     update();
   }
 
-  void filter(String predicate) {
-    print(predicate);
-  }
+  void filter(String predicate) {}
 
   void toggleEditMode() {
     _isEditingMode = !_isEditingMode;
