@@ -14,7 +14,6 @@ class BookDetailsView extends StatelessWidget {
 
   const BookDetailsView({@required this.book});
 
-  //TODO: fix ui
   @override
   Widget build(BuildContext context) {
     return GetBuilder<BookDetailsViewModel>(
@@ -50,22 +49,19 @@ class BookDetailsView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      book.isExternal
-                          ? SvgPicture.asset(
+                      if (book.isExternal) SvgPicture.asset(
                               "assets/icons/book_logo.svg",
                               color: model.themeService.blackThemed,
                               width: 146,
                               height: 200,
-                            )
-                          : Image(
+                            ) else Image(
                               image: CachedNetworkImageProvider(
                                   model.book.thumbUrl, cacheKey: model.book.thumbUrl),
                               width: 146,
                               height: 200,
                             ),
                       const SizedBox(width: 10),
-                      SizedBox(
-                        height: 200,
+                      Flexible(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
