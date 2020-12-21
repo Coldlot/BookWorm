@@ -31,7 +31,9 @@ class BookThumb extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: CachedNetworkImageProvider(image),
+            image: image == 'placeholder'
+                ? AssetImage(themeService.isDarkMode ? "assets/images/external_dark.png" : "assets/images/external.png")
+                : CachedNetworkImageProvider(image, cacheKey: image),
           ),
         ),
         child: Container(

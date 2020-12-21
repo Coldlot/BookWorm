@@ -1,9 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bookworm/datamodels/book.dart';
 import 'package:bookworm/ui/reading_page/reading_page_view_model.dart';
-import 'package:bookworm/widgets/favorite.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_filereader/flutter_filereader.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 class ReadingPageView extends StatelessWidget {
@@ -20,7 +19,7 @@ class ReadingPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ReadingPageViewModel>(
-      init: ReadingPageViewModel(),
+      init: ReadingPageViewModel(book: book),
       builder: (model) {
         return Scaffold(
           backgroundColor: model.themeService.beigeThemed,
@@ -30,18 +29,15 @@ class ReadingPageView extends StatelessWidget {
               child: Icon(Icons.arrow_back_ios,
                   color: model.themeService.blackThemed),
             ),
-            middle: Text(book.title, style: model.themeService.headerStyleThemed),
-            trailing: GestureDetector(
-              onTap: model.toggleToFavorites,
-              child: Favorite(isFavorite: model.isFavorite),
-            ),
+            middle: AutoSizeText(book.title, style: model.themeService.headerStyleThemed, maxLines: 1, overflow: TextOverflow.ellipsis),
             backgroundColor: model.themeService.peachThemed,
           ),
           body: SafeArea(
-            child: FileReaderView(
-              loadingWidget: const CupertinoActivityIndicator(),
-              filePath: book.fileUrl,
-            ),
+            child: Container(),
+            // child: FileReaderView(
+            //   loadingWidget: const CupertinoActivityIndicator(),
+            //   filePath: book.fileUrl,
+            // ),
           ),
         );
       },

@@ -26,6 +26,7 @@ dependencies:
   flutter_filereader: ^2.2.0
   connectivity_wrapper: ^1.0.4
   pin_code_fields: ^6.0.1
+  flutter_cache_manager: ^2.0.0
   flutter_localizations:
     sdk: flutter
 

@@ -6,7 +6,6 @@ import 'package:bookworm/generated/l10n.dart';
 import 'package:bookworm/repositories/appearence_repository.dart';
 import 'package:bookworm/services/theme_service.dart';
 import 'package:bookworm/ui/book_details.dart/book_details_view.dart';
-import 'package:bookworm/ui/reading_page/reading_page_view.dart';
 import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:get/get.dart';
@@ -31,8 +30,6 @@ class BooksViewModel extends GetxBaseViewModel {
       allowedExtensions: ['pdf', 'txt', 'doc', 'epub'],
     );
 
-    final scaleFactor = (await appearence.getAppearence()).scaleFactor;
-
     if (result != null) {
       final file = result.files.first;
       final book = BookModel(
@@ -46,21 +43,18 @@ class BooksViewModel extends GetxBaseViewModel {
       );
       switch (result.files.first.extension) {
         case 'pdf':
-          Get.to(ReadingPageView(book: book, scaleFactor: scaleFactor));
+          Get.to(BookDetailsView(book: book));
           break;
         case 'txt':
-          Get.to(ReadingPageView(book: book, scaleFactor: scaleFactor));
+          Get.to(BookDetailsView(book: book));
           break;
         case 'doc':
-          Get.to(ReadingPageView(book: book, scaleFactor: scaleFactor));
+          Get.to(BookDetailsView(book: book));
           break;
         case 'epub':
-          //empty
+          Get.to(BookDetailsView(book: book));
           break;
       }
-    } else {
-      Get.snackbar(S.of(Get.context).error, S.of(Get.context).errorOfFile,
-          colorText: themeService.blackThemed);
     }
   }
 

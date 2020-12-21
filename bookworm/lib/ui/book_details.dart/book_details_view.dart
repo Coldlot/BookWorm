@@ -28,10 +28,12 @@ class BookDetailsView extends StatelessWidget {
               child: Icon(Icons.arrow_back_ios,
                   color: model.themeService.blackThemed),
             ),
-            trailing: model.isBusy ? Container() : GestureDetector(
-              onTap: model.toggleToFavorites,
-              child: Favorite(isFavorite: model.isFavorite),
-            ),
+            trailing: model.isBusy
+                ? Container()
+                : GestureDetector(
+                    onTap: model.toggleToFavorites,
+                    child: Favorite(isFavorite: model.isFavorite),
+                  ),
             middle: AutoSizeText(
               model.book.title,
               style: model.themeService.headerStyleThemed,
@@ -48,14 +50,19 @@ class BookDetailsView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Image(
-                        image: book.isExternal
-                            ? SvgPicture.asset("assets/book_logo.svg",
-                                color: model.themeService.blackThemed)
-                            : CachedNetworkImageProvider(model.book.thumbUrl),
-                        width: 146,
-                        height: 200,
-                      ),
+                      book.isExternal
+                          ? SvgPicture.asset(
+                              "assets/icons/book_logo.svg",
+                              color: model.themeService.blackThemed,
+                              width: 146,
+                              height: 200,
+                            )
+                          : Image(
+                              image: CachedNetworkImageProvider(
+                                  model.book.thumbUrl, cacheKey: model.book.thumbUrl),
+                              width: 146,
+                              height: 200,
+                            ),
                       const SizedBox(width: 10),
                       SizedBox(
                         height: 200,
