@@ -9,7 +9,6 @@ import 'package:get/get.dart';
 import '../../../generated/l10n.dart';
 import 'books_view_model.dart';
 
-//TODO: add search
 class BooksView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,9 @@ class BooksView extends StatelessWidget {
                           top: 5,
                           left: 30,
                           right: 30,
-                          child: BookSearch(),
+                          child: BookSearch(
+                            onSubmit: model.filter,
+                          ),
                         ),
                       Positioned(
                         top: 15,

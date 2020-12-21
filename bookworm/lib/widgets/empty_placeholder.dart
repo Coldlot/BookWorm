@@ -37,6 +37,9 @@ class EmptyPlaceholder extends StatelessWidget {
         if (!isInternetConnection)
           OutlineButton(
             onPressed: onTap,
+            borderSide: BorderSide(
+              color: themeService.blackThemed,
+            ),
             child: Text(
               S.of(context).watchBooksList,
               style: themeService.buttonTextStyleThemed,
@@ -45,6 +48,9 @@ class EmptyPlaceholder extends StatelessWidget {
         if (isInternetConnection)
           OutlineButton(
             onPressed: onTapInternet,
+            borderSide: BorderSide(
+              color: themeService.blackThemed,
+            ),
             child: Text(
               S.of(context).retry,
               style: themeService.buttonTextStyleThemed,

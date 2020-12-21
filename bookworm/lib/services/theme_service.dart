@@ -55,6 +55,8 @@ class BWThemeService {
   Color get darkBlueThemed => !_isDarkMode ? BWColors.darkBlue : BWColors.white;
   Color get darkBlueWithOpacityThemed =>
       !_isDarkMode ? BWColors.darkBlueWithOpacity : BWColors.whiteWithOpacity;
+  Color get searchThemed =>
+      !_isDarkMode ? BWColors.search : BWColors.whiteWithOpacity;
 
   Color get _textColor => !_isDarkMode ? BWColors.black : BWColors.white;
 

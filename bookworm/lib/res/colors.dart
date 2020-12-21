@@ -14,7 +14,8 @@ class BWColors {
   static const black = Color(0xFF000000);
 
   static const purple = Color(0xFF5856D6);
-  
+
   static const dirtyBlue = Color(0xFF3A4154);
   static const obsidian = Color(0xFF283044);
+  static Color search = const Color(0xFF979797).withOpacity(0.2);
 }

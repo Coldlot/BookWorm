@@ -69,6 +69,10 @@ class BooksViewModel extends GetxBaseViewModel {
     update();
   }
 
+  void filter(String predicate) {
+    print(predicate);
+  }
+
   void showDetails(int index) {
     Get.to(BookDetailsView(book: books[index]));
   }
