@@ -27,5 +27,6 @@
   "unknown": "Unknown",
   "deleteConfirmation": "Do you wanna delete this book from your favorites?",
   "cancel": "Cancel",
-  "ok": "OK"
+  "ok": "OK",
+  "search": "Search"
 }

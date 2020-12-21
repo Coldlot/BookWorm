@@ -1,3 +1,4 @@
+import 'package:bookworm/widgets/book_search.dart';
 import 'package:bookworm/widgets/books_grid.dart';
 import 'package:bookworm/widgets/empty_placeholder.dart';
 import 'package:flutter/cupertino.dart';
@@ -32,20 +33,37 @@ class BooksView extends StatelessWidget {
           body: SafeArea(
             child: model.isBusy
                 ? const Center(child: CupertinoActivityIndicator())
-                : Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 25),
-                    child: model.isConnected
-                        ? BooksGrid(
-                            books: model.books,
-                            onThumbTap: model.showDetails,
-                          )
-                        : Center(
-                            child: EmptyPlaceholder(
-                              isInternetConnection: true,
-                              onTapInternet: model.downloadBooks,
-                            ),
-                          ),
+                : Stack(
+                    children: [
+                      if (model.isConnected)
+                        Positioned(
+                          top: 5,
+                          left: 30,
+                          right: 30,
+                          child: BookSearch(),
+                        ),
+                      Positioned(
+                        top: 15,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 25),
+                          child: model.isConnected
+                              ? BooksGrid(
+                                  books: model.books,
+                                  onThumbTap: model.showDetails,
+                                )
+                              : Center(
+                                  child: EmptyPlaceholder(
+                                    isInternetConnection: true,
+                                    onTapInternet: model.downloadBooks,
+                                  ),
+                                ),
+                        ),
+                      ),
+                    ],
                   ),
           ),
         );

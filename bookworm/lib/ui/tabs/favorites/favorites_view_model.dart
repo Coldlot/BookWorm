@@ -40,6 +40,9 @@ class FavoritesViewModel extends GetxBaseViewModel {
     final fl = FavoriteList();
     fl.favorites = favorites;
     await favoritesRepository.saveBooks(fl);
+    if (favorites.isEmpty) {
+      _isEditingMode = false;
+    }
     update();
   }
 

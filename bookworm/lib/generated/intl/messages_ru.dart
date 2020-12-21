@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "recieveCode" : MessageLookupByLibrary.simpleMessage("Получить код"),
     "recieveNewCode" : MessageLookupByLibrary.simpleMessage("Получить новый код"),
     "retry" : MessageLookupByLibrary.simpleMessage("Повторить"),
+    "search" : MessageLookupByLibrary.simpleMessage("Поиск"),
     "settings" : MessageLookupByLibrary.simpleMessage("Настройки"),
     "signin" : MessageLookupByLibrary.simpleMessage("Вход"),
     "signinout" : MessageLookupByLibrary.simpleMessage("Вход / Выход"),

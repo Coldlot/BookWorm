@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "recieveCode" : MessageLookupByLibrary.simpleMessage("Recieve code"),
     "recieveNewCode" : MessageLookupByLibrary.simpleMessage("Recieve a new one"),
     "retry" : MessageLookupByLibrary.simpleMessage("Retry"),
+    "search" : MessageLookupByLibrary.simpleMessage("Search"),
     "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
     "signin" : MessageLookupByLibrary.simpleMessage("Sign In"),
     "signinout" : MessageLookupByLibrary.simpleMessage("Sign In / Sign Out"),
