@@ -46,9 +46,7 @@ class ReadingPageView extends StatelessWidget {
                 //:
                 FileReaderView(
                     loadingWidget: const CupertinoActivityIndicator(),
-                    filePath: model.book.isExternal
-                        ? model.book.fileUrl
-                        : model.bookFile.path,
+                    filePath: model.bookFile.path,
                   ),
           ),
         );

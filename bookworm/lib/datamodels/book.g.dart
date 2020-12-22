@@ -24,13 +24,15 @@ class BookModelAdapter extends TypeAdapter<BookModel> {
       thumbUrl: fields[4] as String,
       fileUrl: fields[5] as String,
       isExternal: fields[6] as bool,
+      isCached: fields[7] as bool,
+      storedUrl: fields[8] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, BookModel obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
@@ -44,7 +46,11 @@ class BookModelAdapter extends TypeAdapter<BookModel> {
       ..writeByte(5)
       ..write(obj.fileUrl)
       ..writeByte(6)
-      ..write(obj.isExternal);
+      ..write(obj.isExternal)
+      ..writeByte(7)
+      ..write(obj.isCached)
+      ..writeByte(8)
+      ..write(obj.storedUrl);
   }
 
   @override
@@ -71,6 +77,8 @@ BookModel _$BookModelFromJson(Map<String, dynamic> json) {
     thumbUrl: json['thumb_url'] as String,
     fileUrl: json['file_url'] as String,
     isExternal: json['is_external'] as bool,
+    isCached: json['is_cached'] as bool,
+    storedUrl: json['stored_url'] as String,
   );
 }
 
@@ -82,4 +90,6 @@ Map<String, dynamic> _$BookModelToJson(BookModel instance) => <String, dynamic>{
       'thumb_url': instance.thumbUrl,
       'file_url': instance.fileUrl,
       'is_external': instance.isExternal,
+      'is_cached': instance.isCached,
+      'stored_url': instance.storedUrl,
     };

@@ -41,6 +41,7 @@ class BooksViewModel extends GetxBaseViewModel {
         thumbUrl: "placeholder",
         fileUrl: file.path,
         isExternal: true,
+        isCached: true,
       );
       Get.to(BookDetailsView(book: book));
     }

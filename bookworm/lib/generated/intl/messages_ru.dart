@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel" : MessageLookupByLibrary.simpleMessage("Отмена"),
     "darkMode" : MessageLookupByLibrary.simpleMessage("Темная тема"),
     "deleteConfirmation" : MessageLookupByLibrary.simpleMessage("Вы действительно хотите удалить эту книгу из избранных?"),
+    "downloading" : MessageLookupByLibrary.simpleMessage("Загрузка..."),
     "emptyList" : MessageLookupByLibrary.simpleMessage("Здесь пока ничего нет"),
     "enterCode" : MessageLookupByLibrary.simpleMessage("Введите код из SMS"),
     "enterYourNumber" : MessageLookupByLibrary.simpleMessage("Введите номер телефона"),

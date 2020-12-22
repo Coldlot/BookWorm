@@ -28,5 +28,6 @@
   "deleteConfirmation": "Do you wanna delete this book from your favorites?",
   "cancel": "Cancel",
   "ok": "OK",
-  "search": "Search"
+  "search": "Search",
+  "downloading": "Downloading..."
 }

@@ -22,17 +22,24 @@ class BookModel {
   String fileUrl;
   @HiveField(6)
   bool isExternal;
+  @HiveField(7)
+  bool isCached;
+  @HiveField(8)
+  String storedUrl;
 
-  BookModel({
-    @required this.title,
-    @required this.author,
-    @required this.genre,
-    @required this.description,
-    @required this.thumbUrl,
-    @required this.fileUrl,
-    @required this.isExternal,
-  });
+  BookModel(
+      {@required this.title,
+      @required this.author,
+      @required this.genre,
+      @required this.description,
+      @required this.thumbUrl,
+      @required this.fileUrl,
+      @required this.isExternal,
+      this.isCached = false,
+      this.storedUrl = "",
+    });
 
-  factory BookModel.fromJson(Map<String, dynamic> json) => _$BookModelFromJson(json);
+  factory BookModel.fromJson(Map<String, dynamic> json) =>
+      _$BookModelFromJson(json);
   Map<String, dynamic> toJson() => _$BookModelToJson(this);
 }
