@@ -28,7 +28,7 @@ class BooksViewModel extends GetxBaseViewModel {
   Future<void> addExternalBook() async {
     final result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
-      allowedExtensions: ['pdf', 'txt', 'doc', 'epub'],
+      allowedExtensions: ['pdf', 'txt', 'doc', 'docx', 'epub'],
     );
 
     if (result != null) {
@@ -42,20 +42,7 @@ class BooksViewModel extends GetxBaseViewModel {
         fileUrl: file.path,
         isExternal: true,
       );
-      switch (result.files.first.extension) {
-        case 'pdf':
-          Get.to(BookDetailsView(book: book));
-          break;
-        case 'txt':
-          Get.to(BookDetailsView(book: book));
-          break;
-        case 'doc':
-          Get.to(BookDetailsView(book: book));
-          break;
-        case 'epub':
-          Get.to(BookDetailsView(book: book));
-          break;
-      }
+      Get.to(BookDetailsView(book: book));
     }
   }
 

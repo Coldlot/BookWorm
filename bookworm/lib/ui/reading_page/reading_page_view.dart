@@ -3,6 +3,7 @@ import 'package:bookworm/datamodels/book.dart';
 import 'package:bookworm/ui/reading_page/reading_page_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_filereader/flutter_filereader.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 class ReadingPageView extends StatelessWidget {
@@ -29,15 +30,21 @@ class ReadingPageView extends StatelessWidget {
               child: Icon(Icons.arrow_back_ios,
                   color: model.themeService.blackThemed),
             ),
-            middle: AutoSizeText(book.title, style: model.themeService.headerStyleThemed, maxLines: 1, overflow: TextOverflow.ellipsis),
+            middle: AutoSizeText(book.title,
+                style: model.themeService.headerStyleThemed,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis),
             backgroundColor: model.themeService.peachThemed,
           ),
           body: SafeArea(
-            child: Container(),
-            // child: FileReaderView(
-            //   loadingWidget: const CupertinoActivityIndicator(),
-            //   filePath: book.fileUrl,
-            // ),
+            child: model.isBusy
+                ? const Center(child: CupertinoActivityIndicator())
+                : FileReaderView(
+                    loadingWidget: const CupertinoActivityIndicator(),
+                    filePath: model.book.isExternal
+                        ? model.book.fileUrl
+                        : model.bookFile.path,
+                  ),
           ),
         );
       },

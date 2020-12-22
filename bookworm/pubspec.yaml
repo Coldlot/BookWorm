@@ -27,6 +27,7 @@ dependencies:
   connectivity_wrapper: ^1.0.4
   pin_code_fields: ^6.0.1
   flutter_cache_manager: ^2.0.0
+  path_provider: ^1.6.24
   flutter_localizations:
     sdk: flutter
 

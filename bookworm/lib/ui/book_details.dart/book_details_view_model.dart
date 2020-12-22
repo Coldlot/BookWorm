@@ -49,7 +49,13 @@ class BookDetailsViewModel extends GetxBaseViewModel {
 
   Future<void> showContent() async {
     final scale = (await appearence.getAppearence()).scaleFactor;
-    Get.to(ReadingPageView(book: book, scaleFactor: scale));
+    Get.to(ReadingPageView(
+      book: book,
+      scaleFactor: scale,
+      isEpub:
+          // ignore: avoid_bool_literals_in_conditional_expressions
+          book.fileUrl.split("/").last.split(".").last == "epub" ? true : false,
+    ));
   }
 
   void dismiss() {
