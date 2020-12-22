@@ -29,5 +29,6 @@
   "cancel": "Отмена",
   "ok": "ОК",
   "search": "Поиск",
-  "downloading": "Загрузка..."
+  "downloading": "Загрузка...",
+  "deletion": "Удаление книги"
 }

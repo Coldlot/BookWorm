@@ -29,5 +29,6 @@
   "cancel": "Cancel",
   "ok": "OK",
   "search": "Search",
-  "downloading": "Downloading..."
+  "downloading": "Downloading...",
+  "deletion": "Deletion of book"
 }

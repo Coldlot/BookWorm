@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel" : MessageLookupByLibrary.simpleMessage("Cancel"),
     "darkMode" : MessageLookupByLibrary.simpleMessage("Dark mode"),
     "deleteConfirmation" : MessageLookupByLibrary.simpleMessage("Do you wanna delete this book from your favorites?"),
+    "deletion" : MessageLookupByLibrary.simpleMessage("Deletion of book"),
     "downloading" : MessageLookupByLibrary.simpleMessage("Downloading..."),
     "emptyList" : MessageLookupByLibrary.simpleMessage("There is nothing yet"),
     "enterCode" : MessageLookupByLibrary.simpleMessage("Enter the code from SMS"),

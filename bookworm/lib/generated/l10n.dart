@@ -344,6 +344,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Deletion of book`
+  String get deletion {
+    return Intl.message(
+      'Deletion of book',
+      name: 'deletion',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
