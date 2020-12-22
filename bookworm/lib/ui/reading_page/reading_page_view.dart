@@ -39,7 +39,12 @@ class ReadingPageView extends StatelessWidget {
           body: SafeArea(
             child: model.isBusy
                 ? const Center(child: CupertinoActivityIndicator())
-                : FileReaderView(
+                : //isEpub
+                //     ? EpubView(
+                //       controller: model.controller,
+                //     )
+                //:
+                FileReaderView(
                     loadingWidget: const CupertinoActivityIndicator(),
                     filePath: model.book.isExternal
                         ? model.book.fileUrl

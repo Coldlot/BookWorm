@@ -36,6 +36,9 @@ class ReadingPageViewModel extends GetxBaseViewModel {
     // logger.d(bookFile.readAsBytesSync());
     // bookFile.writeAsBytesSync(downloadedFile.readAsBytesSync());
     // logger.d(bookFile.readAsBytesSync());
+    
+    // if (book.fileUrl.split('/').last.split('.').last == 'epub')
+      // controller = EpubController(data: bookFile.readAsBytes());
     setBusy(false);
     update();
   }
