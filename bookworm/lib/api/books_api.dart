@@ -1,3 +1,4 @@
+import 'package:bookworm/datamodels/auth.dart';
 import 'package:bookworm/datamodels/book.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
@@ -13,4 +14,10 @@ abstract class BooksApi {
 
   @GET("/filterBooks/{predicate}")
   Future<List<BookModel>> filterBooks(@Path("predicate") String predicate);
+
+  @POST("/registration")
+  Future<AuthModel> registration(@Body() Map<String, dynamic> map);
+
+  @POST("/login")
+  Future<AuthModel> login(@Body() Map<String, dynamic> map);
 }

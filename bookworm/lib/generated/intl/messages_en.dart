@@ -29,12 +29,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "downloading" : MessageLookupByLibrary.simpleMessage("Downloading..."),
     "emptyList" : MessageLookupByLibrary.simpleMessage("There is nothing yet"),
     "enterCode" : MessageLookupByLibrary.simpleMessage("Enter the code from SMS"),
+    "enterYourEmail" : MessageLookupByLibrary.simpleMessage("Enter your email"),
     "enterYourNumber" : MessageLookupByLibrary.simpleMessage("Enter the phone number"),
+    "enterYourPassword" : MessageLookupByLibrary.simpleMessage("Enter your password"),
     "error" : MessageLookupByLibrary.simpleMessage("Error"),
     "errorOfFile" : MessageLookupByLibrary.simpleMessage("Error of reading file"),
     "genre" : MessageLookupByLibrary.simpleMessage("Genre: "),
     "languages" : MessageLookupByLibrary.simpleMessage("Languages"),
     "library" : MessageLookupByLibrary.simpleMessage("Library"),
+    "logout" : MessageLookupByLibrary.simpleMessage("Logout"),
     "myBooks" : MessageLookupByLibrary.simpleMessage("My Books"),
     "networkConnection" : MessageLookupByLibrary.simpleMessage("Network connection has been lost"),
     "ok" : MessageLookupByLibrary.simpleMessage("OK"),
@@ -52,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "title" : MessageLookupByLibrary.simpleMessage("Title: "),
     "unavailable" : MessageLookupByLibrary.simpleMessage("This feature is unavailable now"),
     "unknown" : MessageLookupByLibrary.simpleMessage("Unknown"),
-    "watchBooksList" : MessageLookupByLibrary.simpleMessage("Go to the book list")
+    "watchBooksList" : MessageLookupByLibrary.simpleMessage("Go to the book list"),
+    "wrongCreds" : MessageLookupByLibrary.simpleMessage("Wrong credentials")
   };
 }

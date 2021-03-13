@@ -30,5 +30,9 @@
   "ok": "OK",
   "search": "Search",
   "downloading": "Downloading...",
-  "deletion": "Deletion of book"
+  "deletion": "Deletion of book",
+  "enterYourPassword": "Enter your password",
+  "enterYourEmail": "Enter your email",
+  "wrongCreds": "Wrong credentials",
+  "logout": "Logout"
 }

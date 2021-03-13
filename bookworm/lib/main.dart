@@ -3,6 +3,7 @@ import 'package:bookworm/datamodels/appearence.dart';
 import 'package:bookworm/datamodels/favorite_list.dart';
 import 'package:bookworm/repositories/appearence_repository.dart';
 import 'package:bookworm/repositories/favorite_book_repository.dart';
+import 'package:bookworm/repositories/user_repository.dart';
 import 'package:bookworm/services/theme_service.dart';
 import 'package:bookworm/ui/splash/splash_view.dart';
 import 'package:connectivity_wrapper/connectivity_wrapper.dart';
@@ -15,7 +16,9 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:get/get.dart';
 import 'package:dio/dio.dart';
 
+import 'datamodels/auth.dart';
 import 'datamodels/book.dart';
+import 'datamodels/user.dart';
 import 'generated/l10n.dart';
 
 Future<void> main() async {
@@ -26,10 +29,14 @@ Future<void> main() async {
   /// [AppearenceModel] - 0
   /// [FavoriteList] - 1
   /// [BookModel] - 2
+  /// [User] - 5
+  /// [Auth] - 10
   Hive
     ..registerAdapter(AppearenceModelAdapter())
     ..registerAdapter(FavoriteListAdapter())
-    ..registerAdapter(BookModelAdapter());
+    ..registerAdapter(BookModelAdapter())
+    ..registerAdapter(AuthModelAdapter())
+    ..registerAdapter(UserModelAdapter());
 
   final appearenceRepository = AppearenceRepository();
   final appearence = await appearenceRepository.getAppearence();
@@ -38,6 +45,7 @@ Future<void> main() async {
   Get.put(BWThemeService(appearence.darkMode));
   Get.put(FavoriteBooksRepository());
   Get.put(BooksApi(Dio()));
+  Get.put(UserRepository());
 
   Get.config(
     defaultPopGesture: true,

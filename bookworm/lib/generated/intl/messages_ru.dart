@@ -29,12 +29,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "downloading" : MessageLookupByLibrary.simpleMessage("Загрузка..."),
     "emptyList" : MessageLookupByLibrary.simpleMessage("Здесь пока ничего нет"),
     "enterCode" : MessageLookupByLibrary.simpleMessage("Введите код из SMS"),
+    "enterYourEmail" : MessageLookupByLibrary.simpleMessage("Введите ваш email"),
     "enterYourNumber" : MessageLookupByLibrary.simpleMessage("Введите номер телефона"),
+    "enterYourPassword" : MessageLookupByLibrary.simpleMessage("Введите ваш пароль"),
     "error" : MessageLookupByLibrary.simpleMessage("Ошибка"),
     "errorOfFile" : MessageLookupByLibrary.simpleMessage("Ошибка чтения файла"),
     "genre" : MessageLookupByLibrary.simpleMessage("Жанр: "),
     "languages" : MessageLookupByLibrary.simpleMessage("Языки"),
     "library" : MessageLookupByLibrary.simpleMessage("Библиотека"),
+    "logout" : MessageLookupByLibrary.simpleMessage("Выйти"),
     "myBooks" : MessageLookupByLibrary.simpleMessage("Мои книги"),
     "networkConnection" : MessageLookupByLibrary.simpleMessage("Нет подключения к интернету"),
     "ok" : MessageLookupByLibrary.simpleMessage("ОК"),
@@ -52,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "title" : MessageLookupByLibrary.simpleMessage("Название: "),
     "unavailable" : MessageLookupByLibrary.simpleMessage("Эта фича в данный момент недоступна"),
     "unknown" : MessageLookupByLibrary.simpleMessage("Неизвестно"),
-    "watchBooksList" : MessageLookupByLibrary.simpleMessage("Перейти к просмотру книг")
+    "watchBooksList" : MessageLookupByLibrary.simpleMessage("Перейти к просмотру книг"),
+    "wrongCreds" : MessageLookupByLibrary.simpleMessage("Неверные данные аутентификации")
   };
 }

@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
-class PhoneField extends StatelessWidget {
+class InputField extends StatelessWidget {
   final TextStyle hintStyle;
   final String hintText;
   final Color color;
+  final bool isPassword;
+  final TextEditingController controller;
 
-  const PhoneField(
+  const InputField(
       {@required this.color,
       @required this.hintStyle,
-      @required this.hintText});
+      @required this.hintText,
+      @required this.controller,
+      this.isPassword = false});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       style: hintStyle,
+      controller: controller,
       textAlign: TextAlign.center,
+      obscureText: isPassword,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -33,7 +39,6 @@ class PhoneField extends StatelessWidget {
         hintText: hintText,
         hintStyle: hintStyle,
       ),
-      keyboardType: TextInputType.phone,
     );
   }
 }
