@@ -42,6 +42,7 @@ class EmptyPlaceholder extends StatelessWidget {
             ),
             child: Text(
               S.of(context).watchBooksList,
+              key: Key('watchBooksList'),
               style: themeService.buttonTextStyleThemed,
             ),
           ),

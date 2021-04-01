@@ -21,9 +21,11 @@ class FavoritesView extends StatelessWidget {
               onTap: model.refreshBooks,
               child: Icon(Icons.refresh, color: model.themeService.blackThemed),
             ),
-            middle: Text(S.of(context).myBooks,
-                style: model.themeService.headerStyleThemed),
+            middle: Text(S.of(context).myBooks,            
+                style: model.themeService.headerStyleThemed,
+                key: Key('favTextKey')),
             backgroundColor: model.themeService.peachThemed,
+            
             trailing: !model.isBusy && model.favorites.isEmpty
                 ? const SizedBox(width: 0, height: 0)
                 : GestureDetector(

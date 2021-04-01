@@ -19,7 +19,8 @@ class BooksView extends StatelessWidget {
           backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
             middle: Text(S.of(context).library,
-                style: model.themeService.headerStyleThemed),
+                style: model.themeService.headerStyleThemed,
+                key: Key('libTextKey')),
             trailing: GestureDetector(
               onTap: model.addExternalBook,
               child: SvgPicture.asset(

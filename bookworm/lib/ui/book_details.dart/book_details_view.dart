@@ -124,6 +124,7 @@ class BookDetailsView extends StatelessWidget {
                     onPressed: model.showContent,
                     child: Text(
                       S.of(context).read,
+                      key: Key('readBook'),
                       style: model.themeService.buttonTextStyleThemed,
                     ),
                   ),

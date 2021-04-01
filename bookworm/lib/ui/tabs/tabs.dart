@@ -42,9 +42,10 @@ class BWTabBarState extends State<BWTabBar> {
       tabBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
+            icon: SvgPicture.asset(             
               'assets/icons/books.svg',
               color: themeService.blackThemed,
+              key: Key('libTab'),
             ),
             activeIcon: SvgPicture.asset(
               'assets/icons/booksActive.svg',
@@ -55,6 +56,7 @@ class BWTabBarState extends State<BWTabBar> {
             icon: SvgPicture.asset(
               'assets/icons/favorite.svg',
               color: themeService.blackThemed,
+              key: Key('favTab'),
             ),
             activeIcon: SvgPicture.asset(
               'assets/icons/favoriteActive.svg',
@@ -65,6 +67,7 @@ class BWTabBarState extends State<BWTabBar> {
             icon: SvgPicture.asset(
               'assets/icons/settings.svg',
               color: themeService.blackThemed,
+              key: Key('settingsTab'),
             ),
             activeIcon: SvgPicture.asset(
               'assets/icons/settingActive.svg',

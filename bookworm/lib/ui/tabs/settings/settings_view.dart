@@ -18,7 +18,8 @@ class SettingsView extends StatelessWidget {
           backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
             middle: Text(S.of(context).settings,
-                style: model.themeService.headerStyleThemed),
+                style: model.themeService.headerStyleThemed,
+                key: Key('setTextKey')),
             backgroundColor: model.themeService.peachThemed,
           ),
           body: Padding(

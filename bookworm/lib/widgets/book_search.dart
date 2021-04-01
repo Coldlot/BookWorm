@@ -17,6 +17,7 @@ class BookSearch extends StatelessWidget {
       init: BookSearchViewModel(),
       builder: (model) {
         return CupertinoTextField(
+          key: Key('searchBooks'),
           decoration: BoxDecoration(
             color: model.themeService.searchThemed,
             borderRadius: BorderRadius.circular(10),
