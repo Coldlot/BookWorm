@@ -1,0 +1,57 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:1:1-31:12
+INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:1:1-31:12
+INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:1:1-31:12
+	package
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:2:5-37
+		INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:4:5-81
+	android:name
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:4:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:8:5-76
+	android:name
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:8:22-73
+uses-permission#android.permission.INTERNET
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:10:22-64
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:12:5-75
+	android:name
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:12:22-72
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:13:5-67
+	android:name
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:13:22-65
+application
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:16:5-28:19
+	android:hardwareAccelerated
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:16:85-119
+	android:networkSecurityConfig
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:16:18-84
+service#com.tencent.smtt.export.external.DexClassLoaderProviderService
+ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:20:9-23:41
+	android:process
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:23:13-38
+	android:label
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:22:13-35
+	android:name
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:21:13-90
+uses-sdk
+INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml
+INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml
+		ADDED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml

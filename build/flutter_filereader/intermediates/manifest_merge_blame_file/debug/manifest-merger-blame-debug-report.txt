@@ -1,0 +1,45 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.webview.filereader" >
+4
+5    <uses-sdk android:minSdkVersion="16" />
+5-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml
+6
+7    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+7-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:4:5-81
+7-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:4:22-78
+8    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+8-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:6:5-79
+8-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:6:22-76
+9    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+9-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:8:5-76
+9-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:8:22-73
+10    <uses-permission android:name="android.permission.INTERNET" />
+10-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:10:5-67
+10-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:10:22-64
+11    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+11-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:12:5-75
+11-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:12:22-72
+12    <uses-permission android:name="android.permission.WAKE_LOCK" />
+12-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:13:5-67
+12-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:13:22-65
+13
+14    <application
+14-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:16:5-28:19
+15        android:hardwareAccelerated="true"
+15-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:16:85-119
+16        android:networkSecurityConfig="@xml/android_q_net_security_config" >
+16-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:16:18-84
+17
+18        <!-- 在AndroidManifest.xml中增加内核首次加载时优化Service声明；    该Service仅在TBS内核首次Dex加载时触发并执行dex2oat任务，任务完成后自动结束。 -->
+19        <service
+19-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:20:9-23:41
+20            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+20-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:21:13-90
+21            android:label="dexopt"
+21-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:22:13-35
+22            android:process=":dexopt" />
+22-->C:\docs\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_filereader-2.2.0\android\src\main\AndroidManifest.xml:23:13-38
+23    </application>
+24
+25</manifest>
