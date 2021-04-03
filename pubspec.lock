@@ -297,12 +297,19 @@ packages:
     source: hosted
     version: "1.0.11"
   flutter_svg:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.18.1"
+    version: "0.19.3"
+  flutter_svg_provider:
+    dependency: "direct main"
+    description:
+      name: flutter_svg_provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.8"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -964,4 +971,4 @@ packages:
     version: "2.2.1"
 sdks:
   dart: ">=2.12.0-0.0 <3.0.0"
-  flutter: ">=1.22.2"
+  flutter: ">=1.24.0-10.1.pre"
