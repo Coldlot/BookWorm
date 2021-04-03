@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
+  final Key key;
   final TextStyle hintStyle;
   final String hintText;
   final Color color;
@@ -9,6 +10,7 @@ class InputField extends StatelessWidget {
 
   const InputField(
       {@required this.color,
+      @required this.key,
       @required this.hintStyle,
       @required this.hintText,
       @required this.controller,

@@ -32,7 +32,8 @@ class SettingsView extends StatelessWidget {
                     icon: "assets/icons/user.svg",
                     text: S.of(context).signinout,
                     trailing: Icon(
-                      Icons.arrow_forward_ios,
+                      Icons.arrow_forward_ios,                      
+                      key: Key('goTologInOut'),
                       color: model.themeService.blackThemed,
                       size: 20,
                     ),

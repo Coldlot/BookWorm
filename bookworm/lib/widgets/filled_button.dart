@@ -7,8 +7,11 @@ class FilledButton extends StatelessWidget {
   final themeService = Get.find<BWThemeService>();
   final Function onTap;
   final String text;
+  final Key key;
 
-  FilledButton({@required this.text, this.onTap});
+  FilledButton({@required this.text,
+   this.key,
+   this.onTap});
 
   @override
   Widget build(BuildContext context) {

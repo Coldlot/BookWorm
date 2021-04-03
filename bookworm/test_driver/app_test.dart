@@ -3,6 +3,7 @@
 
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
+//import 'package:bookworm/generated/l10n.dart';
 
 void main() {
   group('Counter App', () {
@@ -63,15 +64,26 @@ void main() {
 
     });
 
-    test('tap on book', () async{
-    await driver.tap(find.text('Кодеры за работой'));
-    });
+    // test('tap on book', () async{
+    // await driver.tap(find.text('Кодеры за работой'));
+    // });
   
-    test('read the book',() async{
-      await driver.tap(find.byValueKey('readBook'));
-      // driver.waitFor(find.byValueKey('fileReader'));
-      // await driver.scroll(find.byValueKey('fileReader'), 0, 1000, Duration(seconds: 5));
+    // test('read the book',() async{
+    //   await driver.tap(find.byValueKey('readBook'));
+    //   // driver.waitFor(find.byValueKey('fileReader'));
+    //   // await driver.scroll(find.byValueKey('fileReader'), 0, 1000, Duration(seconds: 5));
 
+    // });
+
+    test('log in', () async{
+      await driver.tap(find.byValueKey('settingsTab'));
+      await driver.tap(find.byValueKey('goTologInOut'));      
+      await driver.tap(find.byValueKey('emailKey'));
+      await driver.enterText('test@mail.ru');
+      await driver.tap(find.byValueKey('passKey'));
+      await driver.enterText('test');
+      await driver.tap(find.byValueKey('singinBtn'));
+      //expect(driver.getText(find.byValueKey('logoutBtn')), S.current.logout);
     });
     
 

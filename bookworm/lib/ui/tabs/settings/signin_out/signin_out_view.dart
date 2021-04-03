@@ -32,12 +32,14 @@ class SignInOutView extends StatelessWidget {
                   children: [
                     if (model.isUserLoggedIn) ...[
                       FilledButton(
+                        key: Key('logoutBtn'),
                         text: S.of(context).logout,
                         onTap: model.logout,
                       ),
                     ]
                     else ...[
                       InputField(
+                        key: Key('emailKey'),
                         controller: model.emailController,
                         color: model.themeService.blackThemed,
                         hintStyle: model.themeService.headerStyleThemed,
@@ -45,6 +47,7 @@ class SignInOutView extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       InputField(
+                        key: Key('passKey'),
                         controller: model.passwordController,
                         color: model.themeService.blackThemed,
                         hintStyle: model.themeService.headerStyleThemed,
@@ -53,6 +56,7 @@ class SignInOutView extends StatelessWidget {
                       ),
                       const SizedBox(height: 50),
                       FilledButton(
+                        key: Key('singinBtn'),
                         text: S.of(context).signin,
                         onTap: model.validate,
                       ),
