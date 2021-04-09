@@ -43,7 +43,8 @@ jobs:
         path: build/app/outputs/apk/release/app-release.apk
         
     # Run integrations tests
-    - uses: reactiveсircus/android-emulator-runner@v2
+    - name: Android Emulator Runner
+      uses: ReactiveCircus/android-emulator-runner@v2.15.0
       with:
         api-level: 29
         script: flutter drive --target=test_driver/app.dart
