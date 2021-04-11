@@ -24,7 +24,8 @@ class BookDetailsView extends StatelessWidget {
           appBar: CupertinoNavigationBar(
             leading: GestureDetector(
               onTap: model.dismiss,
-              child: Icon(Icons.arrow_back_ios,
+              child: Icon(Icons.arrow_back_ios,              
+                  key: ValueKey('backFromReadingPage'),
                   color: model.themeService.blackThemed),
             ),
             trailing: model.isBusy

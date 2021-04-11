@@ -16,6 +16,7 @@ class SignInOutView extends StatelessWidget {
           backgroundColor: model.themeService.beigeThemed,
           appBar: CupertinoNavigationBar(
             leading: GestureDetector(
+              key: ValueKey('backFromLoginPage'),
               onTap: model.dismiss,
               child: Icon(Icons.arrow_back_ios,
                   color: model.themeService.blackThemed),
@@ -32,14 +33,14 @@ class SignInOutView extends StatelessWidget {
                   children: [
                     if (model.isUserLoggedIn) ...[
                       FilledButton(
-                        key: Key('logoutBtn'),
+                        key: ValueKey('logoutBtn'),
                         text: S.of(context).logout,
                         onTap: model.logout,
                       ),
                     ]
                     else ...[
                       InputField(
-                        key: Key('emailKey'),
+                        key: ValueKey('emailKey'),
                         controller: model.emailController,
                         color: model.themeService.blackThemed,
                         hintStyle: model.themeService.headerStyleThemed,
@@ -47,7 +48,7 @@ class SignInOutView extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       InputField(
-                        key: Key('passKey'),
+                        key: ValueKey('passKey'),
                         controller: model.passwordController,
                         color: model.themeService.blackThemed,
                         hintStyle: model.themeService.headerStyleThemed,
@@ -56,7 +57,7 @@ class SignInOutView extends StatelessWidget {
                       ),
                       const SizedBox(height: 50),
                       FilledButton(
-                        key: Key('singinBtn'),
+                        key: ValueKey('singinBtn'),
                         text: S.of(context).signin,
                         onTap: model.validate,
                       ),
