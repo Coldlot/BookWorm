@@ -199,14 +199,15 @@ group('Bookworm App library actions', () {
     test('switch language',() async{
       await driver.tap(find.byValueKey('goToLangs'));
       await driver.tap(find.text('English'));
-      expect(await driver.getText(find.byValueKey('setTextKey')), 'Settings');
-    });    
-    test('filePicker', () async{
+      expect(await driver.getText(find.byValueKey('setTextKey')), 'Settings');      
+      await driver.tap(find.byValueKey('goToLangs'));
+      await driver.tap(find.text('Русский'));
       await driver.tap(find.byValueKey('libTab'));
-      await driver.tap(find.byValueKey('UploadBooks'));
-     
-
-    });  
+    });    
+    // test('filePicker', () async{
+    //   await driver.tap(find.byValueKey('libTab'));
+    //   await driver.tap(find.byValueKey('UploadBooks'));
+    // });  
       
 
 
@@ -247,10 +248,10 @@ void systemTests(){
           //await driver.tap(find.byValueKey('settingsTab'));
           //await driver.tap((find.byValueKey('backFromLoginPage')));
           await driver.tap(find.byValueKey('goTologInOut'));  
-          await driver.runUnsynchronized(() async {
-          driver.waitFor(find.byValueKey('logoutBtn'));
+          //await driver.runUnsynchronized(() async {
+          //driver.waitFor(find.byValueKey('logoutBtn'));
           await driver.tap(find.byValueKey('logoutBtn'));
-          });          
+          //});          
           await driver.tap(find.byValueKey('emailKey'));
           await driver.enterText('test@mail.ru');
           await driver.tap(find.byValueKey('passKey'));
