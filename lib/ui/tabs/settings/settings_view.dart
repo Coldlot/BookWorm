@@ -45,8 +45,9 @@ class SettingsView extends StatelessWidget {
                   ItemRow(
                     icon: "assets/icons/world.svg",
                     text: S.of(context).languages,
-                    trailing: Icon(
+                    trailing: Icon(                      
                       Icons.arrow_forward_ios,
+                      key: ValueKey('goToLangs'),
                       color: model.themeService.blackThemed,
                       size: 20,
                     ),
@@ -59,6 +60,7 @@ class SettingsView extends StatelessWidget {
                     icon: "assets/icons/dark_mode.svg",
                     text: S.of(context).darkMode,
                     trailing: CupertinoSwitch(
+                      key: ValueKey('SwitchMode'),
                       onChanged: model.updateDarkModeState,
                       value: model.themeService.isDarkMode,
                     ),

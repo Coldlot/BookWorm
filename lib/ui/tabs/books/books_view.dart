@@ -26,6 +26,7 @@ class BooksView extends StatelessWidget {
               child: SvgPicture.asset(
                 'assets/icons/downloadBook.svg',
                 color: model.themeService.blackThemed,
+                key: ValueKey('UploadBooks'),
               ),
             ),
             backgroundColor: model.themeService.peachThemed,
@@ -34,6 +35,7 @@ class BooksView extends StatelessWidget {
             child: model.isBusy
                 ? const Center(child: CupertinoActivityIndicator())
                 : Stack(
+                  key: ValueKey('ListOfBooks'),
                     children: [
                       if (model.isConnected)
                         Positioned(

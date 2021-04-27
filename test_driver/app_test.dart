@@ -6,16 +6,20 @@ import 'package:bookworm/datamodels/book.dart';
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
+
 //import 'package:bookworm/generated/l10n.dart';
 
 class BooksApiMock extends Mock implements BooksApi {}
 
 
 void main() {
-  group('Bookworm App library actions', () {
-    // First, define the Finders and use them to locate widgets from the
-    // test suite. Note: the Strings provided to the `byValueKey` method must
-    // be the same as the Strings we used for the Keys in step 1.
+  integrationTests();
+  systemTests();
+
+}
+
+void integrationTests(){
+group('Bookworm App library actions', () {
     final searchBooksFinder = find.byValueKey('searchBooks');
     final libTextFinder = find.byValueKey('libTextKey');
 
@@ -189,8 +193,130 @@ void main() {
       await driver.tap((find.byValueKey('backFromLoginPage')));
     });
 
-        
+    test('switch color mode',() async{
+      await driver.tap(find.byValueKey('SwitchMode'));      
+    });
+    test('switch language',() async{
+      await driver.tap(find.byValueKey('goToLangs'));
+      await driver.tap(find.text('English'));
+      expect(await driver.getText(find.byValueKey('setTextKey')), 'Settings');
+    });    
+    test('filePicker', () async{
+      await driver.tap(find.byValueKey('libTab'));
+      await driver.tap(find.byValueKey('UploadBooks'));
+     
+
+    });  
       
+
+
+
+  });
+}
+
+void systemTests(){
+  FlutterDriver driver;
+
+    // Connect to the Flutter driver before running any tests.
+    setUpAll(() async {
+      driver = await FlutterDriver.connect();
+      await driver.waitUntilFirstFrameRasterized();
+    });
+
+    // Close the connection to the driver after the tests have completed.
+    tearDownAll(() async {
+      if (driver != null) {
+
+        driver.close();
+      }
+    });
+  group('SystemTests: ', (){
+        test('1) log in',() async{
+          await driver.tap(find.byValueKey('settingsTab'));
+          //await driver.tap((find.byValueKey('backFromLoginPage')));
+          await driver.tap(find.byValueKey('goTologInOut'));  
+          await driver.tap(find.byValueKey('emailKey'));
+          await driver.enterText('test@mail.ru');
+          await driver.tap(find.byValueKey('passKey'));
+          await driver.enterText('test');
+          await driver.tap(find.byValueKey('singinBtn'));
+          await driver.tap((find.byValueKey('backFromLoginPage')));
+
+        });
+        test('2) relogin',() async{
+          //await driver.tap(find.byValueKey('settingsTab'));
+          //await driver.tap((find.byValueKey('backFromLoginPage')));
+          await driver.tap(find.byValueKey('goTologInOut'));  
+          await driver.runUnsynchronized(() async {
+          driver.waitFor(find.byValueKey('logoutBtn'));
+          await driver.tap(find.byValueKey('logoutBtn'));
+          });          
+          await driver.tap(find.byValueKey('emailKey'));
+          await driver.enterText('test@mail.ru');
+          await driver.tap(find.byValueKey('passKey'));
+          await driver.enterText('test');
+          await driver.tap(find.byValueKey('singinBtn'));
+          await driver.tap((find.byValueKey('backFromLoginPage')));
+        });
+        test('3) switch color mode',() async{
+           await driver.tap(find.byValueKey('SwitchMode'));      
+        });
+        test('4) switch language',() async{
+          await driver.tap(find.byValueKey('goToLangs'));
+          await driver.tap(find.text('English'));
+          expect(await driver.getText(find.byValueKey('setTextKey')), 'Settings');
+        });
+        test('5) open book info', () async{
+          await driver.tap(find.byValueKey('libTab'));
+          await driver.tap(find.text('Кодеры за работой'));
+          await driver.runUnsynchronized(() async {
+          await driver.tap(find.byValueKey('backFromReadingPage'));
+          });
+        });
+        test('6) search a book', () async{
+          await driver.tap(find.byValueKey('searchBooks'));
+          await driver.enterText('прост');
+          await driver.tap(find.text('Простой Python'));
+          await driver.runUnsynchronized(() async {
+          await driver.tap(find.byValueKey('backFromReadingPage'));
+          });
+          await driver.tap(find.byValueKey('favTab'));
+          await driver.tap(find.byValueKey('refresh'));
+          await driver.tap(find.byValueKey('libTab'));
+          await driver.tap(find.byValueKey('searchBooks'));
+          await driver.enterText('');
+        });
+        test('7) search, add to fav and delete', () async{
+          await driver.tap(find.text('Идеальный программист'));
+          await driver.runUnsynchronized(() async {
+          await driver.tap(find.byValueKey('backFromReadingPage'));
+          });
+          await driver.tap(find.byValueKey('favTab'));
+          await driver.tap(find.byValueKey('refresh'));
+          await driver.tap(find.byValueKey('libTab'));
+        });
+        test('8) delete from fav and deny', () async{
+          await driver.tap(find.text('Простой Python'));
+          await driver.runUnsynchronized(() async {
+          await driver.tap(find.byValueKey('backFromReadingPage'));
+          });
+          await driver.tap(find.byValueKey('favTab'));
+          await driver.tap(find.byValueKey('refresh'));          
+        });
+        test('9) delete from fav and accept', () async{
+          await driver.tap(find.byValueKey('libTab'));
+          await driver.tap(find.text('Простой Python'));
+          await driver.runUnsynchronized(() async {
+          await driver.tap(find.byValueKey('backFromReadingPage'));
+          });
+          await driver.tap(find.byValueKey('favTab'));
+          await driver.tap(find.byValueKey('refresh'));
+          await driver.tap(find.byValueKey('libTab'));
+          await driver.tap(find.byValueKey('searchBooks'));
+          await driver.enterText('');
+        });
+
+
 
 
 

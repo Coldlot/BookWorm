@@ -19,7 +19,7 @@ class FavoritesView extends StatelessWidget {
           appBar: CupertinoNavigationBar(
             leading: GestureDetector(
               onTap: model.refreshBooks,
-              child: Icon(Icons.refresh, color: model.themeService.blackThemed),
+              child: Icon(Icons.refresh,key: ValueKey('refresh'), color: model.themeService.blackThemed),
             ),
             middle: Text(S.of(context).myBooks,            
                 style: model.themeService.headerStyleThemed,
